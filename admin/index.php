@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['user_email'])) {
-  
+
   echo "<script>window.open('login.php?not_admin=You are not an admin !','_self')</script>";
 }
 
@@ -15,6 +15,15 @@ else{
 <?php
 
 include("db.php");
+$select_table = "SELECT * FROM price_table";
+$run_query= mysql_query( $select_table, $conn);
+
+$get_info = mysql_fetch_array($run_query);
+
+$itemp = $get_info['item'];
+$valuep = $get_info['value'];
+$happy_hourp = $get_info['happy_hour'];
+
 
 $select_table = "SELECT * FROM main";
 
@@ -38,6 +47,15 @@ $to3p = $get_info['to3'];
 $co3p = $get_info['co3'];
 $to4p = $get_info['to4'];
 $co4p = $get_info['co4'];
+$toa1p = $get_info['toa1'];
+
+$coa1p = $get_info['coa1'];
+$toa2p = $get_info['toa2'];
+$coa2p = $get_info['coa2'];
+$toa3p = $get_info['toa3'];
+$coa3p = $get_info['coa3'];
+$toa4p = $get_info['toa4'];
+$coa4p = $get_info['coa4'];
 
 //prices
 $a1dayp = $get_info['a1day'];
@@ -124,7 +142,7 @@ $ekbp=$get_info['ekb'];
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
-		
+
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -133,7 +151,7 @@ $ekbp=$get_info['ekb'];
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 
-    
+
 <!--<script>
 function validateForm() {
     var a1d = document.forms["myForm"]["A1day"].value;
@@ -162,7 +180,7 @@ function validateForm() {
 
         text="Only Integers must be filled";
 
-        document.getElementById("demo1").innerHTML = text;       
+        document.getElementById("demo1").innerHTML = text;
         document.getElementById("demo2").innerHTML = text;
         document.getElementById("demo3").innerHTML = text;
         document.getElementById("demo4").innerHTML = text;
@@ -188,44 +206,44 @@ return false;
 
 }
 </script>-->
-<script> 
+<script>
 var maxAmount = 4000;
 function textCounter(textField, showCountField) {
     if (textField.value.length > maxAmount) {
         textField.value = textField.value.substring(0, maxAmount);
-  } else { 
+  } else {
         showCountField.value = maxAmount - textField.value.length;
   }
 }
 </script>
 
-<script> 
+<script>
 var maxAmount1 = 50;
 function textCounter1(x, y) {
     if (x.value.length > maxAmount1) {
         x.value = x.value.substring(0, maxAmount1);
-  } else { 
+  } else {
         y.value = maxAmount1 - x.value.length;
   }
 }
 </script>
 
-<script> 
+<script>
 var maxAmount2 = 300;
 function textCounter2(x, y) {
     if (x.value.length > maxAmount2) {
         x.value = x.value.substring(0, maxAmount2);
-  } else { 
+  } else {
         y.value = maxAmount2 - x.value.length;
   }
 }
 </script>
-<script> 
+<script>
 var maxAmount3 = 2000;
 function textCounter3(x, y) {
     if (x.value.length > maxAmount3) {
         x.value = x.value.substring(0, maxAmount2);
-  } else { 
+  } else {
         y.value = maxAmount3 - x.value.length;
   }
 }
@@ -242,26 +260,26 @@ function textCounter3(x, y) {
     }
 </script>
 
-   
+
 	</head>
 
 
 
 	<body>
 		<div class="container">
-   
-   
+
+
   <div class="jumbotron">
-      
-    <h1>Monkey-Cage</h1> 
+
+    <h1>Monkey-Cage</h1>
     <a href="logout.php"  style="align-content: right; padding-left: 900px; padding-bottom: 300px " >  <button  type="button" class="btn btn-danger">Logout </button> </a>
-    <p>Admin Panel</p> 
+    <p>Admin Panel</p>
   </div>
   <div class="panel panel-default">
   <div class="panel-body">
-  	
 
-  <div class="panel-body">	
+
+  <div class="panel-body">
 
   	<form  name="myForm"   action=""   method="post" >
 
@@ -286,14 +304,14 @@ function textCounter3(x, y) {
 	<td>
 <label>Von: </label>
 <select name="SATo" id="sato" >
-		
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="SATc" id="satc" >
-	
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="satclo" id="checkBox" onclick="enableDisable(this.checked, 'sato','satc')">Geschlossen<br></td>
 
 
@@ -301,82 +319,82 @@ function textCounter3(x, y) {
 	<td>
     <label>Von: </label>
 <select name="SUNo" id="suno">
-	
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="SUNc" id="sunc">
-		
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="sunclo" id="checkBox" onclick="enableDisable(this.checked, 'suno','sunc')">Geschlossen<br></td>
 	<td>
     <label>Von: </label>
 
 <select name="MONo" id="mono">
-		
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="MONc" id="monc">
-		
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="monclo" id="checkBox" onclick="enableDisable(this.checked, 'mono','monc')">Geschlossen<br></td>
 	<td>
     <label>Von: </label>
 
 <select name="TUEo" id="tueo">
-		
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="TUEc" id="tuec">
-		
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="tueclo" id="checkBox" onclick="enableDisable(this.checked, 'tueo','tuec')">Geschlossen<br></td></input></td>
 	<td>
     <label>Von: </label>
 
 <select name="WEDo" id="wedo">
-		
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="WEDc" id="wedc">
-		
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="wedclo" id="checkBox" onclick="enableDisable(this.checked, 'wedo','wedc')">Geschlossen<br></td>
 	<td>
     <label>Von: </label>
 
 <select name="THUo" id="thuo">
-	
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="THUc" id="thuc" >
-	
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="thuclo" id="checkBox" onclick="enableDisable(this.checked, 'thuo','thuc')">Geschlossen<br></td>
 	<td>
     <label>Von: </label>
 
 <select name="FRIo" id="frio">
-		
-  ?> 
+
+  ?>
 </select>
 <br>-<br>
 <label>Nach: </label>
 <select name="FRIc" id="fric">
-	
-  ?> 
+
+  ?>
 </select><br><br><input type="checkbox" name="friclo" id="checkBox" onclick="enableDisable(this.checked, 'frio','fric')">Geschlossen<br></td>
    </tr>
-  
+
 
 
 
@@ -386,10 +404,19 @@ function textCounter3(x, y) {
 
 <h2  style="color:red;" >Essen und Trinken</h2>
 <div class="col-lg-12" >
-  
+
 <h4><a href="pdf1.php" target="blank"> PDF</a></h4>
 
 </div>
+<br>
+<br>
+<h2  style="color:red;" >Geburtstage & Events</h2>
+<div class="col-lg-12" >
+
+<h4><a href="pdf1.php" target="blank"> PDF</a></h4>
+
+</div>
+
 
 <br>
 
@@ -402,26 +429,26 @@ function textCounter3(x, y) {
           	 <table class="table">
           	 	<tr>
           	 		<th>Title</th>
-          	 		
+
           	 	</tr>
           	 	<tr>
           	 		<td><textarea rows="1" cols="50" name="ts"  onKeyDown="textCounter1(this.form.ts,this.form.countDisplayts);" onKeyUp="textCounter1(this.form.ts,this.form.countDisplayts);"><?php echo $titlep; ?> </textarea>
           	 	 <br>
-                 <input readonly type="text" name="countDisplayts" size="3" maxlength="3" value="50"> Characters Remaining</td>	
-              
+                 <input readonly type="text" name="countDisplayts" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
           	 	</tr>
 
           	 	<tr>
-          	 		
+
           	 		<th>Content</th>
           	 	</tr>
           	 	<tr>
-          	 		
+
           	 		<td><textarea rows="50" cols="50" style="margin: 0px; height: 546px; width: 381px;" name="cs" onKeyDown="textCounter(this.form.cs,this.form.countDisplaycs);" onKeyUp="textCounter(this.form.cs,this.form.countDisplaycs);">
-                <?php echo $contentp; ?>  
+                <?php echo $contentp; ?>
                 </textarea>
                    <br>
-                   <input readonly type="text" name="countDisplaycs" size="3" maxlength="3" value="4000"> Characters Remaining</td> 
+                   <input readonly type="text" name="countDisplaycs" size="3" maxlength="3" value="4000"> Characters Remaining</td>
 
                 </td>
 
@@ -442,89 +469,89 @@ function textCounter3(x, y) {
           	 <table class="table">
           	 	<tr>
           	 		<th>Feature1</th>
-          	 		
+
           	 	</tr>
           	 <tr>
                 <td><textarea rows="1" cols="50" name="tf1"  onKeyDown="textCounter1(this.form.tf1,this.form.countDisplaytf1);" onKeyUp="textCounter1(this.form.tf1,this.form.countDisplaytf1);"><?php echo $tf1p; ?>  </textarea>
                <br>
-                 <input readonly type="text" name="countDisplaytf1" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplaytf1" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
           	 	</tr>
-          	 		
+
           	 		<th>Content1</th>
           	 	</tr>
           	 	<tr>
-          	 		
+
           	 		<td><textarea rows="4" cols="50"  name="tc1" onKeyDown="textCounter2(this.form.tc1,this.form.countDisplaytc1);" onKeyUp="textCounter2(this.form.tc1,this.form.countDisplaytc1);"><?php echo $tc1p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplaytc1" size="3" maxlength="3" value="300"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplaytc1" size="3" maxlength="3" value="300"> Characters Remaining</td>
 
                 </td>
 
           	 	</tr>
           	 		<tr>
           	 		<th>Feature2</th>
-          	 		
+
           	 	</tr>
           	  <tr>
                 <td><textarea rows="1" cols="50" name="tf2"  onKeyDown="textCounter1(this.form.tf2,this.form.countDisplaytf2);" onKeyUp="textCounter1(this.form.tf2,this.form.countDisplaytf2);"><?php echo $tf2p; ?> </textarea>
                <br>
-                 <input readonly type="text" name="countDisplaytf2" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplaytf2" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
               </tr>
 
           	 	<tr>
-          	 		
+
           	 		<th>Content2</th>
           	 	</tr>
           	 <tr>
-                
+
                 <td><textarea rows="4" cols="50"  name="tc2" onKeyDown="textCounter2(this.form.tc2,this.form.countDisplaytc2);" onKeyUp="textCounter2(this.form.tc2,this.form.countDisplaytc2);"><?php echo $tc2p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplaytc2" size="3" maxlength="3" value="300"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplaytc2" size="3" maxlength="3" value="300"> Characters Remaining</td>
 
                 </td>
 
               </tr>
           	 		<tr>
           	 		<th>Feature3</th>
-          	 		
+
           	 	</tr>
           	 	 <tr>
                 <td><textarea rows="1" cols="50" name="tf3"  onKeyDown="textCounter1(this.form.tf3,this.form.countDisplaytf1);" onKeyUp="textCounter1(this.form.tf3,this.form.countDisplaytf3);"><?php echo $tf3p; ?> </textarea>
                <br>
-                 <input readonly type="text" name="countDisplaytf3" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplaytf3" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
               </tr>
 
           	 	<tr>
-          	 		
+
           	 		<th>Content3</th>
           	 	</tr>
           	 	<tr>
-                
+
                 <td><textarea rows="4" cols="50"  name="tc3" onKeyDown="textCounter2(this.form.tc3,this.form.countDisplaytc3);" onKeyUp="textCounter2(this.form.tc3,this.form.countDisplaytc3);"><?php echo $tc3p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplaytc3" size="3" maxlength="3" value="300"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplaytc3" size="3" maxlength="3" value="300"> Characters Remaining</td>
 
                 </td>
 
               </tr>
 
-          	 	 	 		
+
 
 
 
   			</div>
   			</div>
 
-             <div class="col-lg-12" > 
+             <div class="col-lg-12" >
   			<div class="table-responsive">
           	 <table class="table">
           	 			<tr>
@@ -533,10 +560,10 @@ function textCounter3(x, y) {
                 <a href="pic2.php" target="blank">Bild hochladen2</a>
           	 		</tr>
 
-          	 		      	 	
-          	 		
-          	 			
-   
+
+
+
+
           	 		</div>
           	 	</table>
           	 </div>
@@ -545,45 +572,45 @@ function textCounter3(x, y) {
 
 
 
-<h2  style="color:red;" >Unsere Angebote</h2>
+<h2  style="color:red;" >Kurse</h2>
 <div class="col-lg-12">
   			<div class="col-lg-6">
   				   <div class="table-responsive">
           	 <table class="table">
           	 	<tr>
           	 		<th>Title1</th>
-          	 		
+
           	 	</tr>
           	  <tr>
                 <td><textarea rows="1" cols="50" name="to1"  onKeyDown="textCounter1(this.form.to1,this.form.countDisplayto1);" onKeyUp="textCounter1(this.form.to1,this.form.countDisplayto1);"><?php echo $to1p; ?> </textarea>
                <br>
-                 <input readonly type="text" name="countDisplayto1" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplayto1" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
               </tr>
           	 		<tr>
-          	 		
+
           	 		<th>Content1</th>
-          	 		
+
           	 	</tr>
           	 <tr>
-                
+
                 <td><textarea rows="4" cols="50"  name="co1" onKeyDown="textCounter3(this.form.co1,this.form.countDisplayco1);" onKeyUp="textCounter3(this.form.co1,this.form.countDisplayco1);"><?php echo $co1p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplayco1" size="3" maxlength="3" value="2000"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplayco1" size="3" maxlength="3" value="2000"> Characters Remaining</td>
 
-                
+
 
               </tr>
           	 		<tr>
-          	 		
-          	 	
+
+
           	 	</tr>
-          	 	<tr>
-          	 		
+          	 <!--	<tr>
+
           	 		<td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
-          	 	</tr>
+          	 	</tr>-->
           	 </table>
           	</div>
           </div>
@@ -592,38 +619,38 @@ function textCounter3(x, y) {
           	 <table class="table">
           	 	<tr>
           	 		<th>Title2</th>
-          	 		
+
           	 	</tr>
           	 	<tr>
                 <td><textarea rows="1" cols="50" name="to2"  onKeyDown="textCounter1(this.form.to2,this.form.countDisplayto2);" onKeyUp="textCounter1(this.form.to2,this.form.countDisplayto2);"><?php echo $to2p; ?> </textarea>
                <br>
-                 <input readonly type="text" name="countDisplayto2" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplayto2" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
               </tr>
           	 		<tr>
-          	 		
+
           	 		<th>Content2</th>
-          	 		
+
           	 	</tr>
           	  <tr>
-                
+
                 <td><textarea rows="4" cols="50"  name="co2" onKeyDown="textCounter3(this.form.co2,this.form.countDisplayco2);" onKeyUp="textCounter3(this.form.co2,this.form.countDisplayco2);"><?php echo $co2p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplayco2" size="3" maxlength="3" value="2000"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplayco2" size="3" maxlength="3" value="2000"> Characters Remaining</td>
 
-                
+
 
               </tr>
           	 		<tr>
-          	 		
-          	 		
+
+
           	 	</tr>
-          	 	<tr>
-          	 		
+          	 <!--	<tr>
+
           	 		<td><a href="pic4.php" target="blank" >Bild hochladen4</a></td>
-          	 	</tr>
+          	 	</tr>-->
           	 </table>
           	</div>
           </div>
@@ -635,38 +662,38 @@ function textCounter3(x, y) {
           	 <table class="table">
           	 	<tr>
           	 		<th>Title3</th>
-          	 		
+
           	 	</tr>
           	 	<tr>
                 <td><textarea rows="1" cols="50" name="to3"  onKeyDown="textCounter1(this.form.to3,this.form.countDisplayto3);" onKeyUp="textCounter1(this.form.to3,this.form.countDisplayto3);"><?php echo $to3p; ?> </textarea>
                <br>
-                 <input readonly type="text" name="countDisplayto3" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplayto3" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
               </tr>
           	 		<tr>
-          	 		
+
           	 		<th>Content3</th>
-          	 		
+
           	 	</tr>
           	 	 <tr>
-                
+
                 <td><textarea rows="4" cols="50"  name="co3" onKeyDown="textCounter3(this.form.co3,this.form.countDisplayco3);" onKeyUp="textCounter3(this.form.co3,this.form.countDisplayco3);"><?php echo $co3p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplayco3" size="3" maxlength="3" value="2000"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplayco3" size="3" maxlength="3" value="2000"> Characters Remaining</td>
 
-                
+
 
               </tr>
           	 		<tr>
-          	 		
-          	 		
+
+
           	 	</tr>
-          	 	<tr>
-          	 		
+          	 <!--	<tr>
+
           	 		<td><a href="pic5.php" target="blank" >Bild hochladen5</a></td>
-          	 	</tr>
+          	 	</tr>-->
           	 </table>
           	</div>
           </div>
@@ -675,43 +702,212 @@ function textCounter3(x, y) {
           	 <table class="table">
           	 	<tr>
           	 		<th>Title4</th>
-          	 		
+
           	 	</tr>
           	 <tr>
                 <td><textarea rows="1" cols="50" name="to4"  onKeyDown="textCounter1(this.form.to4,this.form.countDisplayto4);" onKeyUp="textCounter1(this.form.to4,this.form.countDisplayto4);"><?php echo $to4p; ?> </textarea>
                <br>
-                 <input readonly type="text" name="countDisplayto4" size="3" maxlength="3" value="50"> Characters Remaining</td> 
-              
-            
+                 <input readonly type="text" name="countDisplayto4" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
               </tr>
           	 		<tr>
-          	 		
+
           	 		<th>Content4</th>
-          	 		
+
           	 	</tr>
           	 	 <tr>
-                
+
                 <td><textarea rows="4" cols="50"  name="co4" onKeyDown="textCounter3(this.form.co4,this.form.countDisplayco4);" onKeyUp="textCounter3(this.form.co4,this.form.countDisplayco4);"><?php echo $co4p; ?> </textarea>
 
                 <br>
-                 <input readonly type="text" name="countDisplayco4" size="3" maxlength="3" value="2000"> Characters Remaining</td> 
+                 <input readonly type="text" name="countDisplayco4" size="3" maxlength="3" value="2000"> Characters Remaining</td>
 
-                
+
 
               </tr>
           	 		<tr>
-          	 		
-          	 		
+
+
           	 	</tr>
-          	 	<tr>
-          	 		
+          <!--	 	<tr>
+
           	 		<td><a href="pic6.php" target="blank" >Bild hochladen6</a></td>
-          	 	</tr>
+          	 	</tr>-->
           	 </table>
           	</div>
           </div>
       </div>
-  		
+
+
+      <h2  style="color:red;" >Yoga</h2>
+      <div class="col-lg-12">
+        			<div class="col-lg-6">
+
+                     <div class="table-responsive">
+                  	 <table class="table">
+                  	 	<tr>
+                  	 		<th>Title1</th>
+
+                  	 	</tr>
+                  	  <tr>
+                        <td><textarea rows="1" cols="50" name="toa1"  onKeyDown="textCounter1(this.form.toa1,this.form.countDisplaytoa1);" onKeyUp="textCounter1(this.form.toa1,this.form.countDisplaytoa1);"><?php echo $toa1p; ?> </textarea>
+                       <br>
+                         <input readonly type="text" name="countDisplaytoa1" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+                      </tr>
+                  	 		<tr>
+
+                  	 		<th>Content1</th>
+
+                  	 	</tr>
+                  	 <tr>
+
+                        <td><textarea rows="4" cols="50"  name="coa1" onKeyDown="textCounter3(this.form.coa1,this.form.countDisplaycoa1);" onKeyUp="textCounter3(this.form.coa1,this.form.countDisplaycoa1);"><?php echo $coa1p; ?> </textarea>
+
+                        <br>
+                         <input readonly type="text" name="countDisplaycoa1" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+                      </tr>
+                  	 		<tr>
+
+
+                  	 	</tr>
+                  	 <!--	<tr>
+
+                  	 		<td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
+                  	 	</tr>-->
+                  	 </table>
+                  	</div>
+                  </div>
+                        <div class="col-lg-6">
+        				   <div class="table-responsive">
+                	 <table class="table">
+                	 	<tr>
+                	 		<th>Title2</th>
+
+                	 	</tr>
+                	 	<tr>
+                      <td><textarea rows="1" cols="50" name="toa2"  onKeyDown="textCounter1(this.form.toa2,this.form.countDisplaytoa2);" onKeyUp="textCounter1(this.form.toa2,this.form.countDisplaytoa2);"><?php echo $toa2p; ?> </textarea>
+                     <br>
+                       <input readonly type="text" name="countDisplaytoa2" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+                    </tr>
+                	 		<tr>
+
+                	 		<th>Content2</th>
+
+                	 	</tr>
+                	  <tr>
+
+                      <td><textarea rows="4" cols="50"  name="coa2" onKeyDown="textCounter3(this.form.coa2,this.form.countDisplaycoa2);" onKeyUp="textCounter3(this.form.coa2,this.form.countDisplaycoa2);"><?php echo $coa2p; ?> </textarea>
+
+                      <br>
+                       <input readonly type="text" name="countDisplaycoa2" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+                    </tr>
+                	 		<tr>
+
+
+                	 	</tr>
+                	 <!--	<tr>
+
+                	 		<td><a href="pic4.php" target="blank" >Bild hochladen4</a></td>
+                	 	</tr>-->
+                	 </table>
+                	</div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+        			<div class="col-lg-6">
+        				   <div class="table-responsive">
+                	 <table class="table">
+                	 	<tr>
+                	 		<th>Title3</th>
+
+                	 	</tr>
+                	 	<tr>
+                      <td><textarea rows="1" cols="50" name="toa3"  onKeyDown="textCounter1(this.form.toa3,this.form.countDisplaytoa3);" onKeyUp="textCounter1(this.form.toa3,this.form.countDisplaytoa3);"><?php echo $toa3p; ?> </textarea>
+                     <br>
+                       <input readonly type="text" name="countDisplaytoa3" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+                    </tr>
+                	 		<tr>
+
+                	 		<th>Content3</th>
+
+                	 	</tr>
+                	 	 <tr>
+
+                      <td><textarea rows="4" cols="50"  name="coa3" onKeyDown="textCounter3(this.form.coa3,this.form.countDisplaycoa3);" onKeyUp="textCounter3(this.form.coa3,this.form.countDisplaycoa3);"><?php echo $coa3p; ?> </textarea>
+
+                      <br>
+                       <input readonly type="text" name="countDisplaycoa3" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+                    </tr>
+                	 		<tr>
+
+
+                	 	</tr>
+                	 <!--	<tr>
+
+                	 		<td><a href="pic5.php" target="blank" >Bild hochladen5</a></td>
+                	 	</tr>-->
+                	 </table>
+                	</div>
+                </div>
+                        <div class="col-lg-6">
+        				   <div class="table-responsive">
+                	 <table class="table">
+                	 	<tr>
+                	 		<th>Title4</th>
+
+                	 	</tr>
+                	 <tr>
+                      <td><textarea rows="1" cols="50" name="toa4"  onKeyDown="textCounter1(this.form.toa4,this.form.countDisplaytoa4);" onKeyUp="textCounter1(this.form.toa4,this.form.countDisplaytoa4);"><?php echo $toa4p; ?> </textarea>
+                     <br>
+                       <input readonly type="text" name="countDisplaytoa4" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+                    </tr>
+                	 		<tr>
+
+                	 		<th>Content4</th>
+
+                	 	</tr>
+                	 	 <tr>
+
+                      <td><textarea rows="4" cols="50"  name="coa4" onKeyDown="textCounter3(this.form.coa4,this.form.countDisplaycoa4);" onKeyUp="textCounter3(this.form.coa4,this.form.countDisplaycoa4);"><?php echo $coa4p; ?> </textarea>
+
+                      <br>
+                       <input readonly type="text" name="countDisplaycoa4" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+                    </tr>
+                	 		<tr>
+
+
+                	 	</tr>
+                <!--	 	<tr>
+
+                	 		<td><a href="pic6.php" target="blank" >Bild hochladen6</a></td>
+                	 	</tr>-->
+                	 </table>
+                	</div>
+                </div>
+            </div>
+
 
 <!--<h2  style="color:red;" >Preis</h2>
 
@@ -730,7 +926,7 @@ function textCounter3(x, y) {
 
 
 	<tr>
-	<td><input type="number" step=0.01 name="A1day" value="Eingeben Preis"> </input> <p id="demo1" ></p> </td> 
+	<td><input type="number" step=0.01 name="A1day" value="Eingeben Preis"> </input> <p id="demo1" ></p> </td>
 
    </tr>
 
@@ -770,8 +966,8 @@ function textCounter3(x, y) {
 	<td> <input type="number" step=0.01 name="Ayear"  value="Eingeben Preis" ></input><p id="demo5" ></p>  </td>
    </tr>
 
-</table>	
-	
+</table>
+
 </div>
 </div>
 <div class="col-lg-3">
@@ -827,8 +1023,8 @@ function textCounter3(x, y) {
 	<td> <input type="number" step=0.01 name="Syear"  value="Eingeben Preis" ></input><p id="demo10" ></p> </td>
    </tr>
 
-</table>	
-	
+</table>
+
 </div>
 </div>
 <div class="col-lg-3">
@@ -884,12 +1080,12 @@ function textCounter3(x, y) {
 	<td> <input type="number" step=0.01 name="Kyear"  value="Eingeben Preis" ></input><p id="demo15" ></p> </td>
    </tr>
 
-</table>	
-	
+</table>
+
 </div>
 </div>
 <div class="col-lg-3">
-	
+
 		<h2 class="top_head" >Familienkarte</h2>
 
 <p><br></p>
@@ -905,8 +1101,8 @@ function textCounter3(x, y) {
 	<td> <input type="number" step=0.01 name="F1day"  value="Eingeben Preis" ></input><p id="demo16" ></p> </td>
    </tr>
 
-</table>	
-	
+</table>
+
 <p><br></p>
 
 <h2 class="top_head" >Kleinkinder</h2>
@@ -924,10 +1120,10 @@ function textCounter3(x, y) {
 	<td> <input type="number" step=0.01 name="KK1day"  value="Eingeben Preis" ></input><p id="demo17" ></p> </td>
    </tr>
 
-	
 
-</table>	
-	
+
+</table>
+
 </div>
 </div>
 </div>
@@ -939,7 +1135,7 @@ function textCounter3(x, y) {
 <div class="col-lg-6">
 
 
-	
+
 		<h2 class="top_head"  >Erwachsene</h2>
 
 <p><br></p>
@@ -971,16 +1167,16 @@ function textCounter3(x, y) {
    </tr>
 
 
-	
 
-</table>	
-	
+
+</table>
+
 </div>
 </div>
 
 <div class="col-lg-6">
 
-	
+
 		<h2 class="top_head" >Kinder</h2>
 
 <p><br></p>
@@ -1012,10 +1208,10 @@ function textCounter3(x, y) {
 	<td> <input type="number" step=0.01 name="EKB"  value="Eingeben Preis" ></input><p id="demo23" ></p> </td>
    </tr>
 
-	
 
-</table>	
-	
+
+</table>
+
 </div>
 </div>
 
@@ -1024,16 +1220,73 @@ function textCounter3(x, y) {
 
 
 <div>
-  
+
 <br>
 
 -->
+<h2  style="color:red;" >price_table</h2>
+
+<br>
+
+  <div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;   ">
+
+  <table class="table table-bordered"  >
+    <thead>
+      <tr>
+        <th>item</th>
+        <th>Value </th>
+        <th>happy_hour</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td>
+           <input type="text" step=0.01 name="item" value="<?php echo $itemp;?>" >
+
+        </td>
+        <td>
+
+           <input type="number" step=0.01 name="value" value="<?php echo $valuep;?>" >
+
+        </td>
+        <td>
+
+           <input type="number" step=0.01 name="happy_hour" value="<?php echo $happy_hourp;?>" >
+
+        </td>
+      </tr>
+    </tbody>
+    </table>
+      <a href="#" title="" class="add-author">Add Item</a>
+  </div>
+  <script>
+  jQuery(function(){
+      var counter = 1;
+      jQuery('a.add-author').click(function(event){
+          event.preventDefault();
+
+          var newRow = jQuery('<tr><td><input type="text" name="item' +
+              counter + '"/></td><td><input type="number" name="value' +
+              counter + '"/></td><td><input type="number" name="happy_hour' +
+              counter + '"/></td></tr>');
+              counter++;
+          jQuery('db2700106.price_table').append(newRow);
+
+      });
+  });
+  </script>
+
+
+<br>
+<br>
+
 <h2  style="color:red;" >Preise</h2>
 
 <br>
 
   <div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;   ">
- 
+
   <table class="table table-bordered"  >
     <thead>
       <tr>
@@ -1046,70 +1299,70 @@ function textCounter3(x, y) {
       <tr>
         <td>Erwachsene</td>
         <td>
-           <input type="number" step=0.01 name="A1day" value="<?php echo $a1dayp;?>" > 
-          
+           <input type="number" step=0.01 name="A1day" value="<?php echo $a1dayp;?>" >
+
         </td>
         <td>
-          
-           <input type="number" step=0.01 name="Ah1day" value="<?php echo $ah1dayp;?>" > 
+
+           <input type="number" step=0.01 name="Ah1day" value="<?php echo $ah1dayp;?>" >
 
         </td>
       </tr>
       <tr>
         <td>Sch&#502ler, Studenten, Senioren     </td>
         <td>
-           <input type="number" step=0.01 name="S1day" value="<?php echo $s1dayp;?>"> 
+           <input type="number" step=0.01 name="S1day" value="<?php echo $s1dayp;?>">
 
         </td>
         <td>
-           <input type="number" step=0.01 name="Sh1day" value="<?php echo $sh1dayp;?>"> 
+           <input type="number" step=0.01 name="Sh1day" value="<?php echo $sh1dayp;?>">
 
         </td>
       </tr>
       <tr>
         <td>Kinder (unter 14 Jahre)</td>
         <td>
-           <input type="number" step=0.01 name="K1day" value="<?php echo $k1dayp;?>"> 
+           <input type="number" step=0.01 name="K1day" value="<?php echo $k1dayp;?>">
 
         </td>
         <td>
-           <input type="number" step=0.01 name="Kh1day" value="<?php echo $kh1dayp;?>"> 
+           <input type="number" step=0.01 name="Kh1day" value="<?php echo $kh1dayp;?>">
 
         </td>
       </tr>
        <tr>
         <td>Kleinkinder (unter 4 Jahre)</td>
         <td>
-           <input type="number" step=0.01 name="KK1day" value="<?php echo $kk1dayp; ?>"> 
+           <input type="number" step=0.01 name="KK1day" value="<?php echo $kk1dayp; ?>">
         </td>
         <td>
-           <input type="number" step=0.01 name="KKh1day" value="<?php echo $kkh1dayp; ?>"> 
+           <input type="number" step=0.01 name="KKh1day" value="<?php echo $kkh1dayp; ?>">
         </td>
       </tr>
        <tr>
         <td>Familienkarte</td>
         <td>
-          <input type="number" step=0.01 name="F1day" value="<?php echo $f1dayp; ?>"> 
+          <input type="number" step=0.01 name="F1day" value="<?php echo $f1dayp; ?>">
         </td>
         <td>
-            <input type="number" step=0.01 name="Fh1day" value="<?php echo $fh1dayp; ?>"> 
+            <input type="number" step=0.01 name="Fh1day" value="<?php echo $fh1dayp; ?>">
 
         </td>
       </tr>
     </tbody>
   </table>
+
 </div>
-
 <br>
 <br>
 
-  
+
 <br>
 
 <br>
 
 <div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid; overflow-x: scroll; ">
- 
+
   <table class="table  table-bordered"  >
     <thead>
       <tr>
@@ -1188,7 +1441,7 @@ function textCounter3(x, y) {
 <br>
 
 <div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;  ">
- 
+
   <table class="table table-bordered"  >
     <thead>
       <tr>
@@ -1243,7 +1496,7 @@ function textCounter3(x, y) {
 
 
 if (isset($_POST['update'])) {
-  
+
 $ts= $_POST['ts'];
 $cs = $_POST['cs'];
 
@@ -1270,6 +1523,20 @@ $co3 = $_POST['co3'];
 
 $to4 = $_POST['to4'];
 $co4 = $_POST['co4'];
+
+$toa1 = $_POST['toa1'];
+$coa1 = $_POST['coa1'];
+
+$toa2 = $_POST['toa2'];
+$coa2 = $_POST['coa2'];
+
+
+$toa3= $_POST['toa3'];
+$coa3 = $_POST['coa3'];
+
+
+$toa4 = $_POST['toa4'];
+$coa4 = $_POST['coa4'];
 
 $A1day = $_POST['A1day'];
 $Ah1day = $_POST['Ah1day'];
@@ -1314,12 +1581,18 @@ $EKC = $_POST['EKC'];
 $EKB = $_POST['EKB'];
 
 
+$item = $_POST['item'];
+$value = $_POST['value'];
+$happy_hour = $_POST['happy_hour'];
 
 
 
 
+$insert_update =" UPDATE price_table SET item='$item',value='$value',happy_hour='$happy_hour'";
+$run_insert_update= mysql_query( $insert_update, $conn);
 
-$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1',co1='$co1' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' ,co4='$co4' ,a1day='$A1day' ,ah1day ='$Ah1day', a1month='$A1month' ,a3month= '$A3month' ,a6month= '$A6month' , ayear ='$Ayear' , ayyear='$Ayyear', s1day='$S1day' , sh1day='$Sh1day',  s1month='$S1month' ,s3month ='$S3month' ,s6month= '$S6month' ,syear='$Syear' , syyear='$Syyear', k1day= '$K1day' , Kh1day='$Kh1day', k1month= '$K1month' ,k3month='$K3month' ,k6month= '$K6month' ,kyear = '$Kyear' , Kyyear='$Kyyear', f1day='$F1day' , fh1day='$Fh1day', kk1day='$KK1day', kkh1day='$KKh1day' ,eel= '$EEL' ,eec= '$EEC' ,eeb ='$EEB' ,ekl='$EKL' ,ekc= '$EKC' ,ekb='$EKB' ";
+
+$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1',co1='$co1' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' ,co4='$co4' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4',a1day='$A1day' ,ah1day ='$Ah1day', a1month='$A1month' ,a3month= '$A3month' ,a6month= '$A6month' , ayear ='$Ayear' , ayyear='$Ayyear', s1day='$S1day' , sh1day='$Sh1day',  s1month='$S1month' ,s3month ='$S3month' ,s6month= '$S6month' ,syear='$Syear' , syyear='$Syyear', k1day= '$K1day' , Kh1day='$Kh1day', k1month= '$K1month' ,k3month='$K3month' ,k6month= '$K6month' ,kyear = '$Kyear' , Kyyear='$Kyyear', f1day='$F1day' , fh1day='$Fh1day', kk1day='$KK1day', kkh1day='$KKh1day' ,eel= '$EEL' ,eec= '$EEC' ,eeb ='$EEB' ,ekl='$EKL' ,ekc= '$EKC' ,ekb='$EKB' ";
 
 $run_insert_update= mysql_query( $insert_update, $conn);
 
@@ -1332,7 +1605,7 @@ else
   echo "Error: " . $insert_update . "<br>" . mysql_error($conn);
 }
 
- 
+
 
 }
 
@@ -1342,7 +1615,7 @@ else
 
 
 
- 
+
   }
 
 
@@ -1359,9 +1632,9 @@ else
 
 </form>
 </div>
-  
+
 </div>
-  
+
 </div>
 </div>
 
@@ -1371,5 +1644,3 @@ else
 
 </body>
 </html>
-
-

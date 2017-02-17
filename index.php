@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
-
-
 <?php
 
 include("admin/db.php");
 
+$show_query = "SELECT * FROM price_table";
 $show_query = "SELECT * FROM main";
 
 $run_query = mysql_query($show_query, $conn);
@@ -31,6 +29,14 @@ $to3 = $get_value['to3'];
 $co3 = $get_value['co3'];
 $to4 = $get_value['to4'];
 $co4 = $get_value['co4'];
+$toa1 = $get_value['toa1'];
+$coa1 = $get_value['coa1'];
+$toa2 = $get_value['toa2'];
+$coa2 = $get_value['coa2'];
+$toa3 = $get_value['toa3'];
+$coa3 = $get_value['coa3'];
+$toa4 = $get_value['toa4'];
+$coa4 = $get_value['coa4'];
 $fn1 = $get_value['pic1'];
 
 $fn2 = $get_value['pic2'];
@@ -224,7 +230,7 @@ $ekb= str_replace(".",",",$ekb );
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-        <script src="jim/dist/instagram.min.js"></script>
+    <!--    <script src="jim/dist/instagram.min.js"></script>-->
 
 
 
@@ -273,7 +279,8 @@ $ekb= str_replace(".",",",$ekb );
 
 		<!-- Begin preloader -->
 		<div id="preloader">
-			<div class="pulse"></div>
+			<div class="pulse">
+			<img src="assets\img\bgintro1.png"></div>
 		</div>
 		<!-- End preloader -->
 
@@ -306,7 +313,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
                                                                          Monkey Cage GmbH
                                                                          Liebigstr. 4<br>
                                                                          63743 Aschaffenburg</li>
-                                   <li>Fax +49 6021 445 2930</li>                                      
+                                   <li>Fax +49 6021 445 2930</li>
 									<li><i class="fa fa-phone"></i> &nbsp +49 6021 445 2929</li>
 									<li><i class="fa fa-envelope-o"></i> <a href="mailto:support@mail.com">info@monkey-cage.de</a></li>
 									<li><i class="fa fa-building-o"> </i> &nbspAmtsgericht Aschaffenburg</li>
@@ -316,7 +323,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									<li><a href="#">Kai Peter Brand</a></li>
 									<li><i class="fa fa-briefcase"> </i>  &nbsp Finanzamt Aschaffenburg</li>
 									<li><a href="#">USt-IdNr: DE306530625</a></li>
-									
+
 								</ul>
 							</div> <!-- /.col -->
 
@@ -325,15 +332,15 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 								<h4 class="top-slidingbar-heading text-gray-2"></h4>
 								<hr class="hr-width-1 hr-double margin-top-15">
 
-								<!-- Begin thumbnail list 
+								<!-- Begin thumbnail list
 								==========================
 								* Use class "col-2", "col-3", "col-4" "col-5" or "col-6" for thumbnail list columns.
 								* Use class "gutter-1", "gutter-2", "gutter-3", "gutter-4" or "gutter-5" to add more space between items.
 								-->
-								
+
 									<a  href="assets/img/vertical1.png"><img src="assets/img/vertical1.png" alt="Monkey-Cage" width="300" height="75" >  </a>
-									
-								
+
+
 								<!-- End thumbnail list -->
 
 							</div> <!-- /.col -->
@@ -350,11 +357,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 
 			<!-- ==============
-			///// Begin header 
+			///// Begin header
 			=================== -->
 			<header id="header-wrap">
 
-				<!-- Begin Header content 
+				<!-- Begin Header content
 				==========================
 				* Use class "show-hide-on-scroll" to hide header on scroll down and show on scroll up.
 				* Use class "fixed-top" to set header to fixed position.
@@ -371,12 +378,14 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 					<div id="scrollspy" class="container header-container">
 
 						<!-- Begin logo  -->
+						<div class="header_image">
 						<div class="logo font-alter-1">
-						<a href="index.php" style="color: white; " ><h2><img src="assets/img/vertical1.png" width="150" height="40" ></h2></a>
+						<a href="index.php" style="color: white; " ><img src="assets/img/vertical1.png" width="320" height="80" ></a>
 						</div>
+					</div>
 						<!-- End logo -->
 
-						<!-- Begin navbar 
+						<!-- Begin navbar
 						================== -->
 						<nav class="navbar pull-right">
 
@@ -402,7 +411,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							-->
 							<div id="nav-main" class="collapse navbar-collapse mob-navbar-collapse-dark">
 
-								<!-- Begin navbar-nav 
+								<!-- Begin navbar-nav
 								======================
 								* Use class "nav-pills" to enable nav pills.
 								* Use class "pills-rounded", "pills-rounded-2x", "pills-rounded-3x" or "pills-rounded-4x" for rounded pills (class "nav-pills" is required).
@@ -410,11 +419,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 								* Use class "nav-border-bottom" to enable menu links with bottom border (class "nav-pills" is required).
 								-->
 								<ul class="nav navbar-nav navbar-right nav-pills pills-rounded">
-									
-									
+
+
 									<li><span class="nav-link-separator">/</span></li>
 
-									<!-- Begin dropdown 
+									<!-- Begin dropdown
 									====================
 									* Use class "dropdown-hover" to make navigation toggle on desktop hover.
 									* Use class "dropdown-uppercase" to enable dropdown menu uppercase letters.
@@ -440,7 +449,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 											* Use class "dropdown-menu-dark" to enable dark dropdown menu.
 											* Use class "dropdown-menu-color" to enable custom colored dropdown menu.
 											* Use class "dropdown-submenu" for dropdown submenu.
-											
+
 											<li class="dropdown dropdown-menu-dark dropdown-submenu dropdown-hover">
 												<a href="#0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 													Submenu<span class="caret-2 margin-left-10"><i class="fa fa-angle-right"></i></span>
@@ -459,7 +468,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 													* Use class "dropdown-menu-dark" to enable dark dropdown menu.
 													* Use class "dropdown-menu-color" to enable custom colored dropdown menu.
 													* Use class "dropdown-submenu" for dropdown submenu.
-													
+
 													<li class="dropdown dropdown-menu-dark dropdown-submenu dropdown-hover">
 														<a href="#0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 															3 Level Submenu<span class="caret-2 margin-left-10"><i class="fa fa-angle-right"></i></span>
@@ -470,29 +479,38 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 															<li><a class="mlc" href="#">Submenu Link 3</a></li>
 															<li><a class="mlc" href="#">Submenu Link 4</a></li>
 															<li><a class="mlc" href="#">Submenu Link 5</a></li>
-														</ul> <!-- /.dropdown-menu 
+														</ul> <!-- /.dropdown-menu
 													</li>
-													<!-- End dropdown 
+													<!-- End dropdown
 
 												</ul> <!-- /.dropdown-menu
 											</li>
 											<!-- End dropdown -
 
-										</ul> <!-- /.dropdown-menu 
+										</ul> <!-- /.dropdown-menu
 									</li>
 									<!-- End dropdown -->
 
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-2">Newsfeed</a></li>
+									<li><a class="mlc sm-scroll" href="#section-2">Newsfeed Info</a></li>
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-3">Unsere Angebote</a></li>
+									<li><a class="mlc sm-scroll" href="#section-3">Kurse</a></li>
 									<li><span class="nav-link-separator">/</span></li>
+									<li><a class="mlc sm-scroll" href="#section-5">Yoga</a></li>
+									<li><span class="nav-link-separator">/</span></li>
+									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Geburtstage & Events</a></li>
+									<li><span class="nav-link-separator">/</span></li>
+								<!--	<li><a class="mlc sm-scroll" href="#section-7">Social Media</a></li>-->
 									<li><a class="mlc sm-scroll" href="#section-4">Eintrittspreise & Verleih</a></li>
-									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-7">Social Media</a></li>
-									<li><a class="mlc sm-scroll" href="#section-8">Anfahrt und Kontakt</a></li>
+												<li><span class="nav-link-separator">/</span></li>
+													<li><a class="mlc sm-scroll" href="#section-8">Anfahrt & Kontakt</a></li>
+													<li><span class="nav-link-separator">/</span></li>
 									<li><a class="mlc sm-scroll" href="#section-9">Galerie</a></li>
-									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Essen und Trinken</a></li>
+
+									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Essen & Trinken</a></li>
+									<li><a class="mlc sm-scroll" href="#">Shop</a></li>
+
+
 
 								</ul>
 								<!-- End navbar-nav -->
@@ -519,12 +537,12 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			-->
 			<section id="intro" class=" bg-image-parallax" style="background-image: url(assets/img/bgintro1.png); width: auto; ; ">
-				
+
 				<div class="intro-inner">
-				
+
 					<!-- Element cover
 					===================
-					* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info. 
+					* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 					-->
 					<span class="cover bg-transparent-2-dark bg-transparent-gradient-2"></span>
 
@@ -539,7 +557,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 						</h2>
 						<p class="intro-description wow fadeIn" data-wow-delay="2.2s"></p>
 						<div class="margin-top-30">
-						<!--	<a href="#section-2" class="btn btn-white-bordered btn-rounded sm-scroll wow bounceIn" data-wow-delay="0.8s">Our Services</a> 
+						<!--	<a href="#section-2" class="btn btn-white-bordered btn-rounded sm-scroll wow bounceIn" data-wow-delay="0.8s">Our Services</a>
 							<a href="#section-8" class="btn btn-primary btn-rounded sm-scroll margin-top-10 wow bounceIn" data-wow-delay="1s">Hire Us Now!</a>
 						</div>-->
 					</div>
@@ -571,12 +589,12 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
-				
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
+
 				<span class="cover bg-transparent-4-5-dark"></span>
 
-				<div class="container">	
-					
+				<div class="container">
+
 
 						<!-- Left column -
 						<div class="col-lg-1 col-xs-4">
@@ -617,19 +635,19 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
                              	<b class="week" >09:00<br>17:00 <br></b>
 						</div>
 
-					
+
 
 						</div>
 
 								<div  >
 							<h2 class="call-to-action-title text-gray-2 right "></h2>
 						<!--	<p class="lead call-to-action-text text-gray">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 								sed do eiusmod tempor incididunt ut labore.
 							</p>
 							<p class="call-to-action-text lead text-gray margin-top-30"><strong>  </strong></p>
-							
-						
+
+
 
 						<!-- Right column -->
 						<!--<div class="col-md-4 text-center">
@@ -637,10 +655,10 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							<a href="https://creativemarket.com/Themetorium" target="_blank" class="btn btn-primary-bordered btn-xlg btn-block"><i class="fa fa-shopping-cart"></i> Buy This Template</a>
 							<br>
 							<a href="#" class="small text-gray">Or Learn More.. <i class="fa fa-graduation-cap"></i></a>
-							
-						</div> <!-- /.col 
-					</div><!-- /.row 
-				</div> <!-- /.container 
+
+						</div> <!-- /.col
+					</div><!-- /.row
+				</div> <!-- /.container
 			</section>
 			<!-- End call to action section -->
 
@@ -653,34 +671,34 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 					<div class="row">
 						<div class="col-md-12">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
-							
+
 							<div class="heading heading-lg heading-hover wow fadeIn">
 								<span class="heading-title-ghost">About Us</span>
 								<h2 class="heading-title">About Us</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								
+
 								<hr class="hr-width-1 hr-5x border-main">
 								<!-- End divider -->
 
 								<!--<p class="heading-tescription lead"> <a href="#"</a>
 								</p>
 							</div>
-							<!-- End heading 
+							<!-- End heading
 
-						</div> <!-- /.col 
-					</div> <!-- /.row 
-				</div> <!-- /.container 
+						</div> <!-- /.col
+					</div> <!-- /.row
+				</div> <!-- /.container
 
 				<div class="container margin-top-20">
 					<div class="row wow fadeIn" data-wow-delay="0.3s">
@@ -696,11 +714,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									</p>
 								</div>
 							</div>
-							<!-- End info box-1 
+							<!-- End info box-1
 						</div> <!-- /.col -
 
 						<div class="col-sm-6 col-md-3">
-							<!-- Begin info box-1 
+							<!-- Begin info box-1
 							<div class="info-box info-box-1">
 								<span class="info-box-icon"><i class="fa fa-diamond"></i></span>
 								<div class="info-box-info">
@@ -710,11 +728,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									</p>
 								</div>
 							</div>
-							<!-- End info box-1 
-						</div> <!-- /.col 
+							<!-- End info box-1
+						</div> <!-- /.col
 
 						<div class="col-sm-6 col-md-3">
-							<!-- Begin info box-1 
+							<!-- Begin info box-1
 							<div class="info-box info-box-1">
 								<span class="info-box-icon"><i class="fa fa-television"></i></span>
 								<div class="info-box-info">
@@ -724,11 +742,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									</p>
 								</div>
 							</div>
-							<!-- End info box-1 
-						</div> <!-- /.col 
+							<!-- End info box-1
+						</div> <!-- /.col
 
 						<div class="col-sm-6 col-md-3">
-							<!-- Begin info box-1 
+							<!-- Begin info box-1
 							<div class="info-box info-box-1">
 								<span class="info-box-icon"><i class="fa fa-bicycle"></i></span>
 								<div class="info-box-info">
@@ -760,17 +778,17 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-9-dark"></span>
 
-				<div class="container">	
+				<div class="container">
 					<div class="row">
 
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -781,7 +799,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 								<span class="heading-title-ghost"></span>
 								<h2 class="heading-title"><?php echo $title; ?></h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -794,7 +812,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									<?php echo $content; ?>
 
 								</p>
-								
+
 								<!--<a href="#" target="_blank" class="btn btn-white-bordered btn-rounded"><i class="fa fa-external-link"></i> </a>-->
 							</div>
 							<!-- End heading -->
@@ -848,10 +866,10 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									<!-- End info box-4 -->
 								</div> <!-- /.col -->
 
-                                  
+
 							</div><!-- /.row -->
 						</div> <!-- /.col -->
-                    
+
                       <div class="container">
                       	<div class="col-lg-12 col-md-12">
                       		<div  class="col-lg-6 col-md-8">
@@ -864,8 +882,8 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
                       			<img src="admin/admin_img/<?php echo $fn2; ?>">
 
                       		</div>
- 
-  
+
+
                               </div>
 
 					</div><!-- /.row -->
@@ -879,7 +897,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 			<!-- ==================================
 			///// Begin section 3 (portfolio) /////
 			=================================== -->
-			<section id="section-3" class="portfolio-section" class="bg-dark angle-right-top angle-left-bottom bg-image-parallax" style="background-image: url(assets/img/bg22.jpg);">
+			<section id="section-3" class="portfolio-section" class="bg-dark angle-right-top angle-left-bottom bg-image-parallax" ;><!--style="background-image: url(assets/img/bg22.jpg);">-->
 
 				<div class="container">
 					<div class="row wow fadeIn">
@@ -887,7 +905,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -896,9 +914,9 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							-->
 							<div class="heading heading-lg heading-hover">
 								<span class="heading-title-ghost"></span>
-								<h2 class="heading-title " style="color:white;">Unsere Angebote</h2>
+								<h2 class="heading-title " style="color:white;">Kurse</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -915,7 +933,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 						<!-- Right column -->
 						<div class="col-md-6">
 
-							
+
 
 						</div> <!-- /.col -->
 
@@ -932,23 +950,23 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 					-->
 					<div class="isotope popup-gallery gutter-2 col-3">
 
-						<!-- Begin isotope filter 
-						=========================== 
+						<!-- Begin isotope filter
+						===========================
 						<div class="isotope-filter">
 
-							<!-- Begin isotope filter toggle button 
+							<!-- Begin isotope filter toggle button
 							<div class="navbar-header">
-							
+
 							</div>
 
 
 							<!-- End isotope filter toggle button -->
 
-							<!-- Begin isotope filter links 
+							<!-- Begin isotope filter links
 							==================================
 							* Use class "text-center" or "text-right" to align isotope filter links.
 							* Note: class "mlc" = close filter menu when clicking filter link.
-							
+
 							<div class="isotope-filter-links collapse navbar-collapse no-padding wow fadeIn" id="isotope-filter-collapse">
 								<a class="active" href="#" data-filter="*" style="color:white;">Gym</a>
 								<a href="#" data-filter=".photography" style="color:white;">Coaches</a>
@@ -956,7 +974,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 								<a href="#" data-filter=".graphics">Graphics</a>
 								<a href="#" data-filter=".branding, .web-design">Mockups</a>
 							</div>
-							<!-- End isotope filter links 
+							<!-- End isotope filter links
 
 						</div>
 						<!-- End isotope filter -->
@@ -967,7 +985,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 								<h3> <?php echo $to1; ?> </h3>
 								<p><?php echo $co1; ?> </p>
-								
+
 
 							</div>
 
@@ -980,12 +998,12 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 								<h3> <?php echo $to2; ?> </h3>
 								<p><?php echo $co2; ?> </p>
-								
+
 
 							</div>
 
 							</div>
-							
+
 
 
 
@@ -995,11 +1013,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 								<h3> <?php echo $to3; ?> </h3>
 								<p><?php echo $co3; ?> </p>
-								
+
 
 							</div>
 
-							</div>	
+							</div>
 
 
 
@@ -1009,7 +1027,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 								<h3> <?php echo $to4; ?> </h3>
 								<p><?php echo $co4; ?> </p>
-								
+
 
 							</div>
 
@@ -1025,7 +1043,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 						-->
 						<div class="isotope-items-wrap">
 
-							<!-- Grid sizer (do not remove!!!) 
+							<!-- Grid sizer (do not remove!!!)
 							<div class="grid-sizer"></div>
 
 
@@ -1034,8 +1052,8 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							/////////////////////// --
 
 							<div class="isotope-item photography wow fadeInUp">
-								
-								<!-- Begin portfolio item 
+
+								<!-- Begin portfolio item
 								<div class="portfolio-item-wrap">
 									<div class="portfolio-item">
 										<a class="item-link inline-popup-trigger" >
@@ -1048,7 +1066,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 										</a>
 									</div>
 
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden 
+									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden
 									<div id="portfolio-1" class="inline-popup mfp-hide">
 										<div class="inline-popup-inner">
 
@@ -1057,7 +1075,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 1</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1070,27 +1088,27 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 													</ul>
 													<a href="#" target="_blank" class="btn btn-primary btn-rounded btn-lg margin-top-20">Launch Project</a>
 												</div>
-											</div> <!-- /.row 
+											</div> <!-- /.row
 
-										</div> <!-- /.inline-popup-inner 
+										</div> <!-- /.inline-popup-inner
 
 										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
 
 									</div>
-									<!-- End inline popup content 
+									<!-- End inline popup content
 
 								</div>
-								<!-- End portfolio item 
+								<!-- End portfolio item
 
 							</div>
 							<!-- End isotope item -->
 
 							<!-- //////////////////
 							// Begin isotope ite
-							/////////////////////// 
+							///////////////////////
 							<div class="isotope-item branding wow fadeInUp">
 
-								<!-- Begin portfolio item 
+								<!-- Begin portfolio item
 								<div class="portfolio-item-wrap">
 									<div class="portfolio-item">
 										<a class="item-link inline-popup-trigger" >
@@ -1103,7 +1121,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 										</a>
 									</div>
 
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden 
+									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden
 									<div id="portfolio-2" class="inline-popup mfp-hide">
 										<div class="inline-popup-inner">
 
@@ -1112,7 +1130,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 2</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1125,27 +1143,27 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 													</ul>
 													<a href="#" target="_blank" class="btn btn-primary btn-rounded btn-lg margin-top-20">Launch Project</a>
 												</div>
-											</div> <!-- /.row 
+											</div> <!-- /.row
 
-										</div> <!-- /.inline-popup-inner 
+										</div> <!-- /.inline-popup-inner
 
 										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
 
 									</div>
-									<!-- End inline popup content 
+									<!-- End inline popup content
 
 								</div>
-								<!-- End portfolio item 
+								<!-- End portfolio item
 
 							</div>
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
-							/////////////////////// 
+							// Begin isotope item
+							///////////////////////
 							<div class="isotope-item web-design wow fadeInUp">
 
-								<!-- Begin portfolio item 
+								<!-- Begin portfolio item
 								<div class="portfolio-item-wrap">
 									<div class="portfolio-item">
 										<a class="item-link inline-popup-trigger" >
@@ -1158,7 +1176,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 										</a>
 									</div>
 
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden 
+									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden
 									<div id="portfolio-3" class="inline-popup mfp-hide">
 										<div class="inline-popup-inner">
 
@@ -1197,35 +1215,35 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 													data-dots-speed="800"................(milliseconds)
 											-
 											<div class="owl-carousel portfolio-single-carousel dots-outside" data-items="1" data-nav="true">
-												
-												<!-- Begin carousel item 
-												========================= 
+
+												<!-- Begin carousel item
+												=========================
 												<div class="cc-item">
 													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/big/portfolio-img-3.jpg); background-position: 50% 50%;"></div>
 												</div>
 												<!-- End carousel item -->
-												
-												<!-- Begin carousel item 
-												========================= 
+
+												<!-- Begin carousel item
+												=========================
 												<div class="cc-item">
 													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/big/portfolio-img-4.jpg); background-position: 50% 50%;"></div>
 												</div>
 												<!-- End carousel item -->
-												
-												<!-- Begin carousel item 
-												========================= 
+
+												<!-- Begin carousel item
+												=========================
 												<div class="cc-item">
 													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/big/portfolio-img-5.jpg); background-position: 50% 50%;"></div>
 												</div>
-												<!-- End carousel item 
-												
+												<!-- End carousel item
+
 											</div>
 											<!-- End content carousel
 
 											<div class="row margin-top-80">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 3</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1245,20 +1263,20 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
 
 									</div>
-									<!-- End inline popup content 
+									<!-- End inline popup content
 
 								</div>
-								<!-- End portfolio item 
+								<!-- End portfolio item
 
 							</div>
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
-							/////////////////////// 
+							// Begin isotope item
+							///////////////////////
 							<div class="isotope-item graphics wow fadeInUp">
 
-								<!-- Begin portfolio item 
+								<!-- Begin portfolio item
 								<div class="portfolio-item-wrap">
 									<div class="portfolio-item">
 										<a class="item-link inline-popup-trigger" >
@@ -1271,7 +1289,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 										</a>
 									</div>
 
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden 
+									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden
 									<div id="portfolio-4" class="inline-popup mfp-hide">
 										<div class="inline-popup-inner">
 
@@ -1280,7 +1298,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 4</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1293,63 +1311,63 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 													</ul>
 													<a href="#" target="_blank" class="btn btn-primary btn-rounded btn-lg margin-top-20">Launch Project</a>
 												</div>
-											</div> <!-- /.row 
+											</div> <!-- /.row
 
 										</div> <!-- /.inline-popup-inner
 
 										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
 
 									</div>
-									<!-- End inline popup content 
+									<!-- End inline popup content
 
 								</div>
-								<!-- End portfolio item 
+								<!-- End portfolio item
 
 							</div>
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
-							/////////////////////// 
+							// Begin isotope item
+							///////////////////////
 							<div class="isotope-item photography wow fadeInUp">
 
 								<!-- Begin portfolio item -->
-								
+
 								<!-- End portfolio item -->
 
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
+							// Begin isotope item
 							/////////////////////// -->
-							
+
 								<!-- End portfolio item -->
 
-							
-							<!-- End isotope item -->
 
-							<!-- //////////////////
-							// Begin isotope item 
-							/////////////////////// -->
-						
 							<!-- End isotope item -->
 
 							<!-- //////////////////
 							// Begin isotope item
 							/////////////////////// -->
-							
-							<!-- End isotope item -->
 
-							<!-- //////////////////
-							// Begin isotope item 
-							/////////////////////// -->
-							
 							<!-- End isotope item -->
 
 							<!-- //////////////////
 							// Begin isotope item
 							/////////////////////// -->
-						
+
+							<!-- End isotope item -->
+
+							<!-- //////////////////
+							// Begin isotope item
+							/////////////////////// -->
+
+							<!-- End isotope item -->
+
+							<!-- //////////////////
+							// Begin isotope item
+							/////////////////////// -->
+
 					<!-- End isotope -
 
 					<div class="text-center wow fadeIn" data-wow-delay="0.4s">
@@ -1360,6 +1378,144 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 			</section>
 			<!-- End section 3 -->
+
+
+			<section id="section-5" class="prices-section bg-dark angle-right-top angle-left-bottom bg-image-parallax" style="background-image: url(assets/img/misc/bg-3.jpg);  padding: 80px 0px  140px 0px; ">
+
+				<div class="container">
+					<div class="row wow fadeIn">
+
+						<!-- Left column -->
+						<div class="col-md-6">
+
+							<!-- Begin heading
+							===================
+							* Use class "heading-center" or "heading-right" to align heading.
+							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
+							* Use class "heading-hover" to enable heading hover effect.
+							* Use class "heading-uppercase" to enable uppercase letters.
+							-->
+							<div class="heading heading-lg heading-hover">
+								<span class="heading-title-ghost"></span>
+								<h2 class="heading-title " style="color:white;">Yoga</h2>
+
+								<!-- Begin divider
+								===================
+								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
+								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
+								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
+								-->
+								<hr class="hr-width-1 hr-5x border-main">
+								<!-- End divider -->
+
+							</div>
+							<!-- End heading -->
+
+						</div> <!-- /.col -->
+
+						<!-- Right column -->
+						<div class="col-md-6">
+
+
+
+						</div> <!-- /.col -->
+
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+
+
+				<div class="container">
+
+					<!-- Begin isotope
+					===================
+					* Use classes "gutter-1", "gutter-2" or "gutter-3" to add more space between items.
+					* Use class "col-1", "col-2", "col-3", "col-4", "col-5" or "col-6" for columns.
+					-->
+					<div class="isotope popup-gallery gutter-2 col-3">
+
+						<!-- Begin isotope filter
+						===========================
+						<div class="isotope-filter">
+
+							<!-- Begin isotope filter toggle button
+							<div class="navbar-header">
+
+							</div>
+
+
+							<!-- End isotope filter toggle button -->
+
+							<!-- Begin isotope filter links
+							==================================
+							* Use class "text-center" or "text-right" to align isotope filter links.
+							* Note: class "mlc" = close filter menu when clicking filter link.
+
+							<div class="isotope-filter-links collapse navbar-collapse no-padding wow fadeIn" id="isotope-filter-collapse">
+								<a class="active" href="#" data-filter="*" style="color:white;">Gym</a>
+								<a href="#" data-filter=".photography" style="color:white;">Coaches</a>
+							<!--	<a href="#" data-filter=".web-design">Gallery</a>
+								<a href="#" data-filter=".graphics">Graphics</a>
+								<a href="#" data-filter=".branding, .web-design">Mockups</a>
+							</div>
+							<!-- End isotope filter links
+
+						</div>
+						<!-- End isotope filter -->
+
+						<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+						<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white; ">
+
+								<h3> <?php echo $toa1; ?> </h3>
+								<p><?php echo $coa1; ?> </p>
+
+
+							</div>
+
+							</div>
+
+
+							<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+						<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+								<h3> <?php echo $toa2; ?> </h3>
+								<p><?php echo $coa2; ?> </p>
+
+
+							</div>
+
+							</div>
+
+
+
+
+								<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+						<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+								<h3> <?php echo $toa3; ?> </h3>
+								<p><?php echo $coa3; ?> </p>
+
+
+							</div>
+
+							</div>
+
+
+
+								<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+						<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+								<h3> <?php echo $toa4; ?> </h3>
+								<p><?php echo $coa4; ?> </p>
+
+
+							</div>
+
+							</div>
+</section>
 
 
 			<!-- ===============================
@@ -1374,7 +1530,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 
 				<div class="container">
@@ -1383,7 +1539,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1391,11 +1547,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
 							<div class="heading heading-lg heading-hover">
-							
+
 								<h2 class="heading-title " style="color:white;">Preise</h2>
 
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1409,13 +1565,13 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 						</div> <!-- /.col -->
 					</div> <!-- /.row -->
-				</div> <!-- /.container 
+				</div> <!-- /.container
 
 				<div class="container wow fadeIn">
 					<div class="row">
 						<div class="col-md-4">
 
-							<!-- Begin info box-4 
+							<!-- Begin info box-4
 							<div class="info-box info-box-4 info-box-white wow fadeIn">
 								<span class="info-box-icon rounded-icon bg-main text-white"><i class="fa fa-usd"></i></span>
 								<div class="info-box-info">
@@ -1427,11 +1583,11 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							</div>
 							<!-- End info box-4 -->
 
-						 <!-- /.col 
+						 <!-- /.col
 
 						<div class="col-md-4">
 
-							<!-- Begin info box-4 
+							<!-- Begin info box-4
 							<div class="info-box info-box-4 info-box-white wow fadeIn" data-wow-delay="0.2s">
 								<span class="info-box-icon rounded-icon bg-main text-white"><i class="fa fa-bar-chart"></i></span>
 								<div class="info-box-info">
@@ -1441,13 +1597,13 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									</p>
 								</div>
 							</div>
-							<!-- End info box-4 
+							<!-- End info box-4
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
 						<div class="col-md-4">
 
-							<!-- Begin info box-4 
+							<!-- Begin info box-4
 							<div class="info-box info-box-4 info-box-white wow fadeIn" data-wow-delay="0.4s">
 								<span class="info-box-icon rounded-icon bg-main text-white"><i class="fa fa-balance-scale"></i></span>
 								<div class="info-box-info">
@@ -1457,14 +1613,14 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									</p>
 								</div>
 							</div>
-							<!-- End info box-4 
+							<!-- End info box-4
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
-					</div> <!-- /.row 
-				</div> <!-- /.container 
+					</div> <!-- /.row
+				</div> <!-- /.container
 
-				<!-- Begin prices 
+				<!-- Begin prices
 				<div class="prices wow fadeIn" data-wow-delay="0.6s">
 					<div class="container">
 
@@ -1502,10 +1658,10 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 								data-dots="false"....................(true/false)
 								data-dots-speed="800"................(milliseconds)
 						-->
-			
+
 						<!-- End prices carousel -->
 	<div class="container" style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;   ">
- 
+
   <table class="table table-bordered"  >
     <thead>
       <tr>
@@ -1550,7 +1706,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 <div class="container ">
 
 <div class="col-lg-12 col-xs-12" style=" border-style: solid; padding: 20px 10px 20px 10px;color: white; word-wrap: break-word; " >
-<p>Wir weisen darauf hin, dass Minderj&#228hrige unter 14 nur mit Begleitperson klettern d&#252rfen und eine ausgef&#252llte Best&#228tigung vorliegen muss.</p> 
+<p>Wir weisen darauf hin, dass Minderj&#228hrige unter 14 nur mit Begleitperson klettern d&#252rfen und eine ausgef&#252llte Best&#228tigung vorliegen muss.</p>
 <p>Minderj&#228hrige ab 14 jahren m&#252ssen bei Eintritt eine von den Erziehungsberechtigten ausgef&#252llte Einverständniserkl&#228rung 
 abgeben.</p>
 <p>Familienkarten beinhalten den Eintritt von 2 x Erwachsenen + beliebig viele EIGENE Kinder unter 18 Jahren.</p>
@@ -1565,7 +1721,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 
 <div class="container" style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid; overflow-x: scroll; ">
- 
+
   <table class="table  table-bordered"  >
     <thead>
       <tr>
@@ -1618,7 +1774,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								<span class="heading-title-ghost"></span>
 								<h2 class="heading-title">Leihequipment</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1630,7 +1786,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 							</div>
 
 
-							
+
 							</div>
 							<!-- End heading -->
 
@@ -1638,11 +1794,11 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 					</div> <!-- /.row -->
 
 
-					
-							
-						
+
+
+
 	<div class="container" style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;  ">
- 
+
   <table class="table table-bordered"  >
     <thead>
       <tr>
@@ -1671,7 +1827,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
   </table>
 </div>
 
-							
+
 
 
 
@@ -1687,15 +1843,15 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 			<!-- =============================
 			///// Begin section 5 (team) /////
 			============================== -->
-			<section id="section-5" class="team-section">
+	<!--		<section id="section-5" class="team-section">-->
 
 				<!--<div class="container">
 					<div class="row wow fadeIn">
 
-						<!-- Left column 
+						<!-- Left column
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1706,31 +1862,31 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								<span class="heading-title-ghost">The Team</span>
 								<h2 class="heading-title">The Team</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								
+
 								<hr class="hr-width-1 hr-5x border-main">
-								<!-- End divider 
+								<!-- End divider
 
 							</div>
-							<!-- End heading 
+							<!-- End heading
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
-						<!-- Right column 
+						<!-- Right column
 						<div class="col-md-6">
 
 							<p class="lead">
-								Aliquam id viverra dolor. Duis vel ligula non neque.Lorem ipsum dolor sit amet, 
+								Aliquam id viverra dolor. Duis vel ligula non neque.Lorem ipsum dolor sit amet,
 								consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Suckamik saneta isromet.
 							</p>
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
-					</div> <!-- /.row 
+					</div> <!-- /.row
 				</div> <!-- /.container -->
 
 				<!-- Begin team -
@@ -1770,14 +1926,14 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								data-nav-speed="800".................(milliseconds)
 								data-dots="false"....................(true/false)
 								data-dots-speed="800"................(milliseconds)
-						
+
 						<div class="owl-carousel team-carousel dots-outside" data-items="4" data-margin="20" data-tablet-landscape="3" data-tablet-portrait="2" data-mobile-landscape="2" data-mobile-portrait="1">
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
-							
+
 							<div class="team-box team-box-hover team-box-rounded">
 								<div class="team-image">
 									<img src="assets/img/team/staff-1.jpg" alt="John Doe">
@@ -1786,25 +1942,25 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								<div class="team-info text-center">
 									<h4 class="team-info-title">John Doe</h4>
 									<p class="team-info-text">General Manager</p>
-									
-									<!-- Begin social icons 
+
+									<!-- Begin social icons
 									<ul class="social-icons">
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
 									</ul>
-									<!-- End social icons 
+									<!-- End social icons
 
 								</div>
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
-							
+
 							<div class="team-box team-box-hover team-box-rounded">
 								<div class="team-image">
 									<img src="assets/img/team/staff-2.jpg" alt="Joseph Reeves">
@@ -1814,7 +1970,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									<h4 class="team-info-title">Joseph Reeves</h4>
 									<p class="team-info-text">Developer</p>
 
-									<!-- Begin social icons 
+									<!-- Begin social icons
 									<ul class="social-icons">
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
@@ -1827,11 +1983,11 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
-							
+
 							<div class="team-box team-box-hover team-box-rounded">
 								<div class="team-image">
 									<img src="assets/img/team/staff-3.jpg" alt="Henry Harrison">
@@ -1841,24 +1997,24 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									<h4 class="team-info-title">Miranda Harrison</h4>
 									<p class="team-info-text">Designer</p>
 
-									<!-- Begin social icons 
+									<!-- Begin social icons
 									<ul class="social-icons">
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
 									</ul>
-									<!-- End social icons 
+									<!-- End social icons
 
 								</div>
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
-							
+
 							<div class="team-box team-box-hover team-box-rounded">
 								<div class="team-image">
 									<img src="assets/img/team/staff-4.jpg" alt="Henry Harrison">
@@ -1868,24 +2024,24 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									<h4 class="team-info-title">Anna Daniel</h4>
 									<p class="team-info-text">Marketing</p>
 
-									<!-- Begin social icons 
+									<!-- Begin social icons
 									<ul class="social-icons">
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 										<li><a class="btn btn-social-min btn-default btn-rounded-full btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
 									</ul>
-									<!-- End social icons 
+									<!-- End social icons
 
 								</div>
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
-							
+
 							<div class="team-box team-box-hover team-box-rounded">
 								<div class="team-image">
 									<a href="#" target="_blank"><img src="assets/img/team/staff-5.jpg" alt="Henry Harrison"></a>
@@ -1897,14 +2053,14 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									<a href="" class="btn btn-primary btn-rounded btn-sm">Read More!</a>
 								</div>
 							</div>
-							<!-- End team box 
+							<!-- End team box
 
 						</div>
-						<!-- End team carousel 
+						<!-- End team carousel
 
-					</div> <!-- /.container 
+					</div> <!-- /.container
 				</div>
-				<!-- End team 
+				<!-- End team
 
 			</section>
 			<!-- End section 5 -->
@@ -1917,43 +2073,43 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 			-->
 
 			<!-- Youtube video background
-			NOTE: Replace videoURL with your own (videoURL:'your-youtube-video-URL'). 
+			NOTE: Replace videoURL with your own (videoURL:'your-youtube-video-URL').
 			Do not forget to add your background image for mobile devices (because the video background doesn't work on mobile devices).
-			More info about YTPlayer: https://github.com/pupunzi/jquery.mb.YTPlayer 
+			More info about YTPlayer: https://github.com/pupunzi/jquery.mb.YTPlayer
 
-			<section id="section-9" class="video-section youtube-bg text-white angle-right-top angle-left-bottom" 
+			<section id="section-9" class="video-section youtube-bg text-white angle-right-top angle-left-bottom"
 				style="background-image: url(assets/img/video-bg/promo-video-bg.jpg); background-position: 50% 50%;"
 				data-property="{
 			      videoURL: 'https://youtu.be/O7JwGfdMsCw',
 			      containment: 'self',
-			      startAt: 0, 
+			      startAt: 0,
 			      stopAt: 0,
 			      autoPlay: true,
 			      loop: true,
-			      mute: true,  
-			      showControls: false, 
+			      mute: true,
+			      showControls: false,
 			      showYTLogo: false,
 			      realfullscreen: true,
-			      addRaster: false, 
+			      addRaster: false,
 			      optimizeDisplay: true,
 			      stopMovieOnBlur: true
 				}">
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
-				
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
+
 				<span class="cover bg-transparent-8-dark"></span>
 
 				<div class="video-section-caption vertical-align-center">
 
-					<!-- Begin heading 
+					<!-- Begin heading
 					===================
 					* Use class "heading-center" or "heading-right" to align heading.
 					* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
 					* Use class "heading-hover" to enable heading hover effect.
 					* Use class "heading-uppercase" to enable uppercase letters.
-					
+
 					<div class="heading heading-lg heading-center heading-hover wow fadeIn">
 						<span class="heading-title-ghost">Video Promo</span>
 						<h2 class="heading-title">Video Promo</h2>
@@ -1962,9 +2118,9 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt sumbire itkum.
 						</p>
 					</div>
-					<!-- End heading 
+					<!-- End heading
 
-				</div> <!-- /.vertical-align-center 
+				</div> <!-- /.vertical-align-center
 
 			</section>
 			<!-- End section 7 -->
@@ -1972,41 +2128,41 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 			<!-- ===========================================
 			///// Begin section 6 (blog/articles list) /////
-			============================================ 
+			============================================
 			<section id="section-6" class="blog-section">
 
 				<div class="container">
 					<div class="row wow fadeIn">
 
-						<!-- Left column 
+						<!-- Left column
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
-							
+
 							<div class="heading heading-lg heading-hover">
 								<span class="heading-title-ghost">Articles</span>
 								<h2 class="heading-title">Articles</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								
+
 								<hr class="hr-width-1 hr-5x border-main">
-								<!-- End divider 
+								<!-- End divider
 
 							</div>
-							<!-- End heading 
+							<!-- End heading
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
-						<!-- Right column 
+						<!-- Right column
 						<div class="col-md-6">
 
 							<p class="lead">
@@ -2014,7 +2170,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								tempor incididunt ut labore et dolore magna aliqua. Ullamco laboris nisi vaimera suttis.
 							</p>
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
 					</div> <!-- /.row
 				</div> <!-- /.container
@@ -2024,20 +2180,20 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 					<!-- Begin blog list
 					=====================
 					* Use class "blog-list-classic" to enable classic blog list layout.
-					
+
 					<div class="blog-list margin-top-80">
 						<div class="blog-wrap">
 
-							<!-- Begin blog list item 1 
-							============================ 
+							<!-- Begin blog list item 1
+							============================
 							<div class="blog-list-item row wow fadeInUp">
 
-								<!-- Left column 
+								<!-- Left column
 								<div class="col col-md-6 no-padding">
 									<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-1.jpg); background-position: 50% 50%;"></a>
-								</div> <!-- /.col 
+								</div> <!-- /.col
 
-								<!-- Right column 
+								<!-- Right column
 								<div class="col col-md-6 no-padding">
 									<div class="bco blog-list-info">
 										<h2 class="blog-list-title"><a href="#" title="Aenean Odio Metus">Aenean Odio Metus</a></h2>
@@ -2046,25 +2202,25 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 											<a href="#" class="article-category">#web design</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
-								</div> <!-- /.col 
+								</div> <!-- /.col
 
-							</div> 
+							</div>
 							<!-- End blog list item 1 -->
 
-							<!-- Begin blog list item 2 
-							============================ 
+							<!-- Begin blog list item 2
+							============================
 							<div class="blog-list-item row wow fadeInUp">
 
-								<!-- Left column 
+								<!-- Left column
 								<div class="col col-md-6 col-md-push-6 no-padding">
 									<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-2.jpg); background-position: 50% 50%;"></a>
 								</div> <!-- /.col -->
 
-								<!-- Right column 
+								<!-- Right column
 								<div class="col col-md-6 col-md-pull-6 no-padding">
 									<div class="bco blog-list-info">
 										<h2 class="blog-list-title"><a href="#" title="Curabitur a Sodales">Curabitur a Sodales</a></h2>
@@ -2073,20 +2229,20 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 											<a href="#" class="article-category">#development</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
-								</div> <!-- /.col 
+								</div> <!-- /.col
 
-							</div> 
+							</div>
 							<!-- End blog list item 2 -->
 
-							<!-- Begin blog list item 3 
-							============================ 
+							<!-- Begin blog list item 3
+							============================
 							<div class="blog-list-item row wow fadeInUp">
 
-								<!-- Left column 
+								<!-- Left column
 								<div class="col col-md-6 no-padding">
 
 									<!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
@@ -2122,36 +2278,36 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 											data-nav-speed="800".................(milliseconds)
 											data-dots="false"....................(true/false)
 											data-dots-speed="800"................(milliseconds)
-									
+
 									<div class="owl-carousel dots-right" data-items="1" data-nav="true">
-										
-										<!-- Begin carousel item 
-										========================= 
+
+										<!-- Begin carousel item
+										=========================
 										<div class="cc-item">
 											<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-3.jpg); background-position: 50% 50%;"></a>
 										</div>
 										<!-- End carousel item -->
-										
-										<!-- Begin carousel item 
-										========================= 
+
+										<!-- Begin carousel item
+										=========================
 										<div class="cc-item">
 											<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-5.jpg); background-position: 50% 50%;"></a>
 										</div>
 										<!-- End carousel item -->
-										
-										<!-- Begin carousel item 
-										========================= 
+
+										<!-- Begin carousel item
+										=========================
 										<div class="cc-item">
 											<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-6.jpg); background-position: 50% 50%;"></a>
 										</div>
-										<!-- End carousel item 
-										
+										<!-- End carousel item
+
 									</div>
-									<!-- End content carousel 
+									<!-- End content carousel
 
 								</div> <!-- /.col -->
 
-								<!-- Right column 
+								<!-- Right column
 								<div class="col col-md-6 no-padding">
 									<div class="bco blog-list-info">
 										<h2 class="blog-list-title"><a href="#" title="Sed Quis Vestibulum">Sed Quis Vestibulum</a></h2>
@@ -2160,25 +2316,25 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 											<a href="#" class="article-category">#development</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
-								</div> <!-- /.col 
+								</div> <!-- /.col
 
-							</div> 
+							</div>
 							<!-- End blog list item 3 -->
 
-							<!-- Begin blog list item 4 
-							============================ 
+							<!-- Begin blog list item 4
+							============================
 							<div class="blog-list-item row wow fadeInUp">
 
-								<!-- Left column 
+								<!-- Left column
 								<div class="col col-md-6 col-md-push-6 no-padding">
 									<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-4.jpg); background-position: 50% 50%;"></a>
 								</div> <!-- /.col -->
 
-								<!-- Right column 
+								<!-- Right column
 								<div class="col col-md-6 col-md-pull-6 no-padding">
 									<div class="bco blog-list-info">
 										<h2 class="blog-list-title"><a href="#" title="Proin Ex Dolor">Proin Ex Dolor</a></h2>
@@ -2187,94 +2343,94 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 											<a href="#" class="article-category">#web design</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
-								</div> <!-- /.col 
+								</div> <!-- /.col
 
-							</div> 
-							<!-- End blog list item 4 
-						
-						</div> <!-- /.blog-wrap 
+							</div>
+							<!-- End blog list item 4
+
+						</div> <!-- /.blog-wrap
 					</div>
-					<!-- End blog-list 
+					<!-- End blog-list
 
 					<div class="text-center wow fadeIn" data-wow-delay="0.4s">
 						<a href="#" target="_blank" class="btn btn-default btn-xlg btn-block margin-top-60">View All Articles</a>
 					</div>
 
-				</div> <!-- /.container 
+				</div> <!-- /.container
 
 			</section>
 			<!-- End section 6 -->
 
 
-			
-			
-			<section id="section-7" class="testimonials-section bg-dark angle-right-top angle-left-bottom bg-image-parallax" style="background-image: url(assets/img/misc/bg-2.jpg); padding: 80px 0px 80px 0px;"">
+
+
+		<!--	<section id="section-7" class="testimonials-section bg-dark angle-right-top angle-left-bottom bg-image-parallax" style="background-image: url(assets/img/misc/bg-2.jpg); padding: 80px 0px 80px 0px;">
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.-->  
-				
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.-->
+
 				<span class="cover bg-transparent-9-5-dark"></span>
 
-				<div class="container">
+		<!--		<div class="container">
 					<div class="row">
-						<div class="col-md-12"> 
+						<div class="col-md-12">
 
-						
-							
+
+
 							<div class="heading heading-lg heading-hover text-white wow fadeIn">
-								
-								<h2 class="heading-title">Social Media</h2>
 
-								<!-- Begin divider 
+								<h2 class="heading-title">Social Media</h2>-->
+
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.-->
-								
-								<hr class="hr-width-1 hr-5x border-main">
-								
+
+							<!--	<hr class="hr-width-1 hr-5x border-main">
+
 
 							</div>
-							
-						</div>  
-					</div>  
-				</div>  
 
-				<div class="container">
-				
+						</div>
+					</div>
+				</div>
+
+				<div class="container">-->
+
 						<!-- Left column -->
-						
-							<!-- Begin heading 
-							===================
-							* Use class "heading-center" or "heading-right" to align heading.
-							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
-							* Use class "heading-hover" to enable heading hover effect.
-							* Use class "heading-uppercase" to enable uppercase letters.
-							-->
-							
-                  
-						<div class="col-lg-6 ">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
-							<div class="heading heading-lg heading-hover">
+
+
+				<!--		<div class="col-lg-6 ">-->
+
+							<!-- Begin heading
+							===================
+							* Use class "heading-center" or "heading-right" to align heading.
+							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
+							* Use class "heading-hover" to enable heading hover effect.
+							* Use class "heading-uppercase" to enable uppercase letters.
+							-->
+					<!--		<div class="heading heading-lg heading-hover">
 								<div>
 									<span class="heading-title-ghost"></span>
 								<h2 class="heading-title text-white"></h2>
 
-								</div>
+							</div>-->
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -2282,100 +2438,100 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								-->
 
 
-								
 
-								<p class="heading-tescription lead text-gray-2">
-									
+
+					<!--			<p class="heading-tescription lead text-gray-2">
+
 								</p>
-				
-                    <div class="fb-page" data-href="https://www.facebook.com/MonkeyCage2016/" data-tabs="timeline" data-width="300" data-height="300" data-small-header="false"  data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MonkeyCage1/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MonkeyCage2016/">MonkeyCage</a></blockquote></div>
-								
 
-								
-                              
-							
-							
+                    <div class="fb-page" data-href="https://www.facebook.com/MonkeyCage2016/" data-tabs="timeline" data-width="300" data-height="300" data-small-header="false"  data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MonkeyCage1/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MonkeyCage2016/">MonkeyCage</a></blockquote></div>
+
+
+
+
+
+
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6">-->
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
-							<div class="heading heading-lg heading-hover">
-								
-								<!-- Begin divider 
+					<!--		<div class="heading heading-lg heading-hover">-->
+
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
 								-->
-							
+
 								<!-- End divider -->
 
-								<p class="heading-tescription lead text-gray-2">
-									
+							<!--	<p class="heading-tescription lead text-gray-2">
+
 								</p>
 
 								                <a class="twitter-timeline" data-width="500" data-height="300" href="https://twitter.com/MonkeyCage2016">Tweets by MonkeyCage2016</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-								
-								
 
 
-							
-							
-							
+
+
+
+
+
 							</div>
 						</div>
-						</div>!-- /.container -->
+					</div>--><!-- /.container -->
 
-			</section>
+	<!--		</section>-->
 			<!-- End section 7 -->
 
 
 			<!-- =================================
 			///// Begin section 10 (clients) /////
-			================================== 
+			==================================
 			<section id="section-10" class="clients-section">
 
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-12">
-							
-							<!-- Begin heading 
+
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
-							
+
 							<div class="heading heading-lg heading-center heading-hover wow fadeIn">
 								<span class="heading-title-ghost">Our Clients</span>
 								<h2 class="heading-title">Our Clients</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								
+
 								<hr class="hr-width-1 hr-5x border-main">
-								<!-- End divider 
+								<!-- End divider
 
 								<p class="heading-tescription lead max-width-800 margin-auto">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 								</p>
 							</div>
-							<!-- End heading 
+							<!-- End heading
 
 						</div> <!-- /.col -->
 
-						<!-- Left column 
+						<!-- Left column
 						<div class="col-md-12 margin-top-60 wow fadeIn" data-wow-delay="0.3s">
 
 							<!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
@@ -2411,64 +2567,64 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									data-nav-speed="800".................(milliseconds)
 									data-dots="false"....................(true/false)
 									data-dots-speed="800"................(milliseconds)
-							
+
 							<div class="owl-carousel clients-carousel dots-outside" data-items="5" data-margin="40" data-tablet-landscape="4" data-tablet-portrait="3" data-mobile-landscape="2" data-mobile-portrait="1">
-								
-								<!-- Begin carousel item 
-								========================= 
+
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-1.png" alt="image"></a>
 								</div>
-								<!-- End carousel item 
-								
-								<!-- Begin carousel item 
-								========================= 
+								<!-- End carousel item
+
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-2.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-								
-								<!-- Begin carousel item 
-								========================= 
+
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-3.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
-								========================= 
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-4.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
-								========================= 
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-5.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
-								========================= 
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-6.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
-								========================= 
+								<!-- Begin carousel item
+								=========================
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-7.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -
-								
+
 							</div>
-							<!-- End content carousel 
+							<!-- End content carousel
 
 						</div> <!-- /.col
-					</div> <!-- /.row 
-				</div> <!-- /.container 
+					</div> <!-- /.row
+				</div> <!-- /.container
 
 			</section>
 			<!-- End section 10 -->
@@ -2486,26 +2642,26 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-9-dark bg-transparent-gradient-1"  ></span>
 
-			
-						
+
+
 
  <div class="container" >
 
 
  <div class="heading heading-lg heading-hover">
 							<span class="heading-title-ghost"></span>
-								<h2 class="heading-title text-white">Anfahrt und Kontakt</h2>
+								<h2 class="heading-title text-white">Anfahrt & Kontakt</h2>
 
 								<hr class="hr-width-1 hr-5x border-main">
 							</div>
 
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -2518,36 +2674,36 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								<h2 class="heading-title text-white">  </h2>
 
 								</div>
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
 								-->
-							
+
 								<!-- End divider -->
 
 								<p class="heading-tescription lead text-gray-2">
-									
+
 								</p>
 
-								
-									
-								
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20525.453553890606!2d9.097298529046132!3d49.97982763243011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDU4JzQ3LjQiTiA5wrAwNic1My4zIkU!5e0!3m2!1sen!2sin!4v1471693048601" width="500" height="250" frameborder="0" style="border:1" allowfullscreen></iframe>
-							
 
-							
-							
-							
-							
+
+
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20525.453553890606!2d9.097298529046132!3d49.97982763243011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDU4JzQ3LjQiTiA5wrAwNic1My4zIkU!5e0!3m2!1sen!2sin!4v1471693048601" width="500" height="250" frameborder="0" style="border:1" allowfullscreen></iframe>
+
+
+
+
+
+
 							</div>
 						</div>
 
 						<div class="col-md-6">
 
-						
-							<!-- Begin heading 
+
+							<!-- Begin heading
 
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
@@ -2560,22 +2716,22 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									<span class="heading-title-ghost"></span>
 								<h2 class="heading-title text-white">  </h2>
 
-								</div>
-								<!-- Begin divider 
+							</div>
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
 								-->
-							
+
 								<!-- End divider -->
 
 								<p class="heading-tescription lead text-gray-2">
-									
+
 								</p>
-								
+
 <div style=" border-style: solid; padding: 20px 10px 7px 10px;color: white; " >
-<p>Monkey Cage – Boulderhalle Aschaffenburg</p> 
+<p>Monkey Cage – Boulderhalle Aschaffenburg</p>
 <p>Mainaschafferstr. 113</p>
 <p>63741 Aschaffenburg</p>
 <p>E-Mail: info@monkey-cage.de</p>
@@ -2583,19 +2739,19 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 <p>Fax:+49 6021 – 4452930 </p>
 </div>
 
-								
-							
-							
-							
-							
-							
+
+
+
+
+
+
 							</div>
 						</div>
 
-							
 
-						
-						<!-- Right column 
+
+
+						<!-- Right column
 						<div class="col-md-5 text-gray-2 padding-left-40">
 
 							<div class="contact-info">
@@ -2606,7 +2762,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 							<h5 class="margin-top-40 margin-bottom-20">Follow Us:</h5>
 
-							<!-- Begin social icons 
+							<!-- Begin social icons
 							<ul class="social-icons margin-bottom-20">
 								<li><a class="btn btn-social-min btn-white-bordered btn-rounded-full btn-lg" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
 								<li><a class="btn btn-social-min btn-white-bordered btn-rounded-full btn-lg" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
@@ -2614,30 +2770,30 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								<li><a class="btn btn-social-min btn-white-bordered btn-rounded-full btn-lg" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 								<li><a class="btn btn-social-min btn-white-bordered btn-rounded-full btn-lg" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
 							</ul>
-							<!-- End social icons 
+							<!-- End social icons
 
-						</div> <!-- /.col 
+						</div> <!-- /.col
 
 					</div> <!-- /.row -->
 
-					
-						<div class="col-md-12">
 
-							<!-- Begin contact form 
+					<!--	<div class="col-md-12">-->
+
+							<!-- Begin contact form
 							========================= -->
-							<div class="heading heading-lg heading-hover">
+						<!--	<div class="heading heading-lg heading-hover">
 							<span class="heading-title-ghost"></span>
 								<h2 class="heading-title text-white">Schreib uns</h2>
 							</div>
-							<form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s" method="post" action=" " >
+							<form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s" method="post" action=" " >-->
 
 								<!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
-								<input type="hidden" name="project_name" value="yourwebsiteaddress.com"> <!-- Change value to your site name -->
-								<input type="hidden" name="admin_email" value="your@email.com"> <!-- Change value to your email address (where a message will be sent) -->
-								<input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com"> <!-- Change value to your own message subject -->
+						<!--		<input type="hidden" name="project_name" value="yourwebsiteaddress.com"> --><!-- Change value to your site name -->
+						<!--		<input type="hidden" name="admin_email" value="your@email.com"> <!-- Change value to your email address (where a message will be sent) -->
+						<!--		<input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com"> <!-- Change value to your own message subject -->
 								<!-- End Hidden Required Fields -->
 
-								<div class="row">
+						<!--		<div class="row">
 									<div class="col-lg-4">
 										<div class="form-group">
 											<input type="text" class="form-control" name="fname" placeholder="Vorname" required="">
@@ -2685,11 +2841,11 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									<div class="col-lg-4" >
 									</div>
 								</div>
-							</form>
+							</form>-->
 							<!-- End contact form -->
-							
 
-						</div> <!-- /.col-->
+
+				<!--		</div>--> <!-- /.col-->
 					</div> <!-- /.row -->
 				</div> <!-- /.container -->
 
@@ -2699,7 +2855,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-9-dark bg-transparent-gradient-1"></span>
 
@@ -2707,9 +2863,9 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 				<!-- Left column -->
 						<div class="col-md-12">
 
-						
-						
-							<div class="heading heading-lg heading-hover">	
+
+
+							<div class="heading heading-lg heading-hover">
 								<h2 class="heading-title text-white">Galerie</h2>
 
 								<div>
@@ -2719,14 +2875,14 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									&nbsp;
 
 								</div>
-
-<script async src="https://d36hc0p18k1aoc.cloudfront.net/pages/a5b5e5.js"></script><div class="tintup" data-id="saurav-rav67" data-columns="" data-mobilescroll="true"    data-infinitescroll="true" data-personalization-id="817636" style="height:300px;width:100%;"><a href="http://www.tintup.com/blog/the-best-instagram-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">instagram widget</a></div>
-
+				<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/4be06b86025151c39a31f5424358f756.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+<!--<script async src="https://d36hc0p18k1aoc.cloudfront.net/pages/a5b5e5.js"></script><div class="tintup" data-id="saurav-rav67" data-columns="" data-mobilescroll="true"    data-infinitescroll="true" data-personalization-id="817636" style="height:300px;width:100%;"><a href="http://www.tintup.com/blog/the-best-instagram-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">instagram widget</a></div>
+-->
 
 <!--<div class="col-md-12">
 
-						
-						
+
+
 							<div class="heading heading-lg heading-hover">
 								<span class="heading-title-ghost"></span>
 								<h2 class="heading-title text-white">Galerie</h2>
@@ -2740,7 +2896,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 								</div>
 
 
-								<div class="conatiner"  style="height:380px; overflow: scroll; "> 
+								<div class="conatiner"  style="height:380px; overflow: scroll; ">
 
 <!-- LightWidget WIDGET --><!-- LightWidget WIDGET <script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/97b4754fff2a5374813bd852b6e587ad.html" id="lightwidget_97b4754fff" name="lightwidget_97b4754fff"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 
@@ -2824,14 +2980,14 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 		<!-- Theme custom JS (all your JS customizations) -->
 		<script src="assets/js/custom.js"></script>
 
-		
+
 
 
 	   <!--==============================
 	   ///// Begin Google Analytics /////
 	   ============================== -->
 
-	   <!-- Paste your Google Analytics code here. 
+	   <!-- Paste your Google Analytics code here.
 	   Go to http://www.google.com/analytics/ for more information. -->
 
 	   <!--==============================
@@ -2857,7 +3013,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#flip1").click(function(){
         $("#panel1").slideToggle("fast");
-   
+
     });
 });
 </script>
@@ -3015,7 +3171,7 @@ $(document).ready(function(){
 
 <?php
 
-if (isset($_POST['contact_submit'])) 
+if (isset($_POST['contact_submit']))
 {
 
 	$name = $_POST['fname'];
@@ -3027,10 +3183,10 @@ if (isset($_POST['contact_submit']))
     $message = $_POST['message'];
 
 
-  
 
 
-	
+
+
 
 }
 
