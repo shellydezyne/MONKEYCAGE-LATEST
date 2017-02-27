@@ -37,7 +37,7 @@ img {
 
 }
 .header_image{
-	margin-left: 390px;
+	/*margin-left: 390px;*/
 }
 
 ::selection {
@@ -467,8 +467,9 @@ body.boxed #header.header-fluid .container {
 /* ------------------------------------------------------------- */
 
 .logo {
-	position: relative;
-	float: left;
+	/*position: relative;
+	 float: left; */
+	text-align: center;
 	z-index: 9;
 }
 #header.header-fluid .logo {

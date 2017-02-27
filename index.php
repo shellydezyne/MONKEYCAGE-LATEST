@@ -378,7 +378,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 					<div id="scrollspy" class="container header-container">
 
 						<!-- Begin logo  -->
-						<div class="header_image">
+					 <div class="header_image">
 						<div class="logo font-alter-1">
 						<a href="index.php" style="color: white; " ><img src="assets/img/vertical1.png" width="320" height="80" ></a>
 						</div>
@@ -508,7 +508,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									<li><a class="mlc sm-scroll" href="#section-9">Galerie</a></li>
 
 									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Essen & Trinken</a></li>
-									<li><a class="mlc sm-scroll" href="#">Shop</a></li>
+									<li><a class="mlc sm-scroll" href="http://monkey-cage.cwlshop.com/ ">Shop</a></li>
 
 
 
