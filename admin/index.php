@@ -15,15 +15,6 @@ else{
 <?php
 
 include("db.php");
-$select_table = "SELECT * FROM price_table";
-$run_query= mysql_query( $select_table, $conn);
-
-$get_info = mysql_fetch_array($run_query);
-
-$itemp = $get_info['item'];
-$valuep = $get_info['value'];
-$happy_hourp = $get_info['happy_hour'];
-
 
 $select_table = "SELECT * FROM main";
 
@@ -58,6 +49,7 @@ $toa4p = $get_info['toa4'];
 $coa4p = $get_info['coa4'];
 
 //prices
+/*
 $a1dayp = $get_info['a1day'];
 $ah1dayp = $get_info['ah1day'];
 
@@ -100,7 +92,7 @@ $eebp = $get_info['eeb'];
 $eklp= $get_info['ekl'];
 $ekcp = $get_info['ekc'];
 $ekbp=$get_info['ekb'];
-
+*/
 ?>
 
 
@@ -1224,7 +1216,7 @@ function textCounter3(x, y) {
 <br>
 
 -->
-<h2  style="color:red;" >price_table</h2>
+<!-- <h2  style="color:red;" >price_table</h2>
 
 <br>
 
@@ -1275,200 +1267,15 @@ function textCounter3(x, y) {
 
       });
   });
-  </script>
+  </script> -->
+
+<h2  style="color:red;" ><a href="preise.php" target="blank">Preise</a></h2>
+<h2  style="color:red;" ><a href="eintrittskarten.php" target="blank">Eintrittskarten Specials</a></h2>
+<h2  style="color:red;" ><a href="leihequipment.php" target="blank">Leihequipment</a></h2>
+<h2  style="color:red;" ><a href="album.php" target="blank">Album</a></h2>
 
 
-<br>
-<br>
 
-<h2  style="color:red;" >Preise</h2>
-
-<br>
-
-  <div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;   ">
-
-  <table class="table table-bordered"  >
-    <thead>
-      <tr>
-        <th>Eintritt (Mo-So & Feiertage)</th>
-        <th>Preise </th>
-        <th>Happy Hour (Mo-Fr Eintritt vor 16 Uhr)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Erwachsene</td>
-        <td>
-           <input type="number" step=0.01 name="A1day" value="<?php echo $a1dayp;?>" >
-
-        </td>
-        <td>
-
-           <input type="number" step=0.01 name="Ah1day" value="<?php echo $ah1dayp;?>" >
-
-        </td>
-      </tr>
-      <tr>
-        <td>Sch&#502ler, Studenten, Senioren     </td>
-        <td>
-           <input type="number" step=0.01 name="S1day" value="<?php echo $s1dayp;?>">
-
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Sh1day" value="<?php echo $sh1dayp;?>">
-
-        </td>
-      </tr>
-      <tr>
-        <td>Kinder (unter 14 Jahre)</td>
-        <td>
-           <input type="number" step=0.01 name="K1day" value="<?php echo $k1dayp;?>">
-
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Kh1day" value="<?php echo $kh1dayp;?>">
-
-        </td>
-      </tr>
-       <tr>
-        <td>Kleinkinder (unter 4 Jahre)</td>
-        <td>
-           <input type="number" step=0.01 name="KK1day" value="<?php echo $kk1dayp; ?>">
-        </td>
-        <td>
-           <input type="number" step=0.01 name="KKh1day" value="<?php echo $kkh1dayp; ?>">
-        </td>
-      </tr>
-       <tr>
-        <td>Familienkarte</td>
-        <td>
-          <input type="number" step=0.01 name="F1day" value="<?php echo $f1dayp; ?>">
-        </td>
-        <td>
-            <input type="number" step=0.01 name="Fh1day" value="<?php echo $fh1dayp; ?>">
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-<br>
-<br>
-
-
-<br>
-
-<br>
-
-<div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid; overflow-x: scroll; ">
-
-  <table class="table  table-bordered"  >
-    <thead>
-      <tr>
-        <th>Eintrittskarten Specials</th>
-        <th>11er</th>
-        <th>3-Monate</th>
-        <th>Halbjahr</th>
-        <th>Jahr</th>
-        <th>Jahr mtl. Abo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Erwachsene</td>
-        <td>
-          <input type="number" step=0.01 name="A1month"  value="<?php echo $a1monthp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="A3month"  value="<?php echo $a3monthp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="A6month"  value="<?php echo $a6monthp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Ayear"  value="<?php echo $ayearp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Ayyear"  value="<?php echo $ayyearp; ?>" ></input>
-        </td>
-      </tr>
-      <tr>
-        <td>Sch&#502ler, Studenten, Senioren  </td>
-        <td>
-           <input type="number" step=0.01 name="S1month"  value="<?php echo $s1monthp; ?>" ></input>
-        </td>
-        <td>
-         <input type="number" step=0.01 name="S3month"  value="<?php echo $s3monthp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="S6month"  value="<?php echo $s6monthp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Syear"  value="<?php echo $syearp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Syyear"  value="<?php echo $syyearp; ?>" ></input>
-        </td>
-      </tr>
-      <tr>
-        <td>Kinder (unter 14 Jahre)</td>
-         <td>
-            <input type="number" step=0.01 name="K1month"  value="<?php echo $k1monthp; ?>" ></input>
-         </td>
-        <td>
-           <input type="number" step=0.01 name="K3month"  value="<?php echo $k3monthp; ?>" ></input>
-        </td>
-        <td>
-         <input type="number" step=0.01 name="K6month"  value="<?php echo $k6monthp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Kyear"  value="<?php echo $kyearp; ?>" ></input>
-        </td>
-        <td>
-           <input type="number" step=0.01 name="Kyyear"  value="<?php echo $kyyearp; ?>" ></input>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<br>
-<br>
-<div class="col-lg-12">
-  <h2 style="color:red;">Leihequipment</h2>
-</div>
-<br>
-
-<div  style="background-color: white; padding: 0px 0px 0px 0px; border-style: solid;  overflow-x: scroll;  ">
-
-  <table class="table table-bordered"  >
-    <thead>
-      <tr>
-        <th>Leihequipment</th>
-        <th>Erwachsene</th>
-        <th>Kinder</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Leihschuhe</td>
-        <td> <input type="number" step=0.01 name="EEL"  value="<?php echo $eelp; ?>" ></input></td>
-        <td> <input type="number" step=0.01 name="EKL"  value="<?php echo $eklp; ?>" ></input></td>
-      </tr>
-      <tr>
-        <td>Chalkbags</td>
-        <td> <input type="number" step=0.01 name="EEC"  value="<?php echo $eecp; ?>" ></input></td>
-        <td> <input type="number" step=0.01 name="EKC"  value="<?php echo $ekcp; ?>" ></input></td>
-      </tr>
-      <tr>
-        <td>B&#502rsten</td>
-        <td> <input type="number" step=0.01 name="EEB"  value="<?php echo $eebp; ?>" ></input></td>
-        <td>  <input type="number" step=0.01 name="EKB"  value="<?php echo $ekbp; ?>" ></input></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 
 </div>
@@ -1538,6 +1345,7 @@ $coa3 = $_POST['coa3'];
 $toa4 = $_POST['toa4'];
 $coa4 = $_POST['coa4'];
 
+/*
 $A1day = $_POST['A1day'];
 $Ah1day = $_POST['Ah1day'];
 $A1month=$_POST['A1month'];
@@ -1590,9 +1398,10 @@ $happy_hour = $_POST['happy_hour'];
 
 $insert_update =" UPDATE price_table SET item='$item',value='$value',happy_hour='$happy_hour'";
 $run_insert_update= mysql_query( $insert_update, $conn);
+*/
 
 
-$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1',co1='$co1' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' ,co4='$co4' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4',a1day='$A1day' ,ah1day ='$Ah1day', a1month='$A1month' ,a3month= '$A3month' ,a6month= '$A6month' , ayear ='$Ayear' , ayyear='$Ayyear', s1day='$S1day' , sh1day='$Sh1day',  s1month='$S1month' ,s3month ='$S3month' ,s6month= '$S6month' ,syear='$Syear' , syyear='$Syyear', k1day= '$K1day' , Kh1day='$Kh1day', k1month= '$K1month' ,k3month='$K3month' ,k6month= '$K6month' ,kyear = '$Kyear' , Kyyear='$Kyyear', f1day='$F1day' , fh1day='$Fh1day', kk1day='$KK1day', kkh1day='$KKh1day' ,eel= '$EEL' ,eec= '$EEC' ,eeb ='$EEB' ,ekl='$EKL' ,ekc= '$EKC' ,ekb='$EKB' ";
+$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1',co1='$co1' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
 
 $run_insert_update= mysql_query( $insert_update, $conn);
 

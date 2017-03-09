@@ -3,12 +3,18 @@
 
 include("admin/db.php");
 
-$show_query = "SELECT * FROM price_table";
+
 $show_query = "SELECT * FROM main";
 
 $run_query = mysql_query($show_query, $conn);
 
 $get_value=  mysql_fetch_array($run_query);
+
+
+
+$preise_table = mysql_query("SELECT * FROM preise",$conn);
+$leihequipment_table = mysql_query("SELECT * FROM leihequipment",$conn);
+$eintrittskarten_table = mysql_query("SELECT * FROM eintrittskarten",$conn);
 
 
 $pdf = $get_value['pdf'];
@@ -311,8 +317,8 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 								<ul class="list-unstyled small">
 									<li><i class="fa fa-home"></i> &nbsp Sitz der Gesellschaft:
                                                                          Monkey Cage GmbH
-                                                                         Liebigstr. 4<br>
-                                                                         63743 Aschaffenburg</li>
+                                                                         mainaschafferstr. 113<br>
+                                                                         63741 Aschaffenburg</li>
                                    <li>Fax +49 6021 445 2930</li>
 									<li><i class="fa fa-phone"></i> &nbsp +49 6021 445 2929</li>
 									<li><i class="fa fa-envelope-o"></i> <a href="mailto:support@mail.com">info@monkey-cage.de</a></li>
@@ -505,7 +511,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 												<li><span class="nav-link-separator">/</span></li>
 													<li><a class="mlc sm-scroll" href="#section-8">Anfahrt & Kontakt</a></li>
 													<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-9">Galerie</a></li>
+									<li><a class="mlc sm-scroll" href="admin/album.php">Galerie</a></li>
 
 									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Essen & Trinken</a></li>
 									<li><a class="mlc sm-scroll" href="http://monkey-cage.cwlshop.com/ ">Shop</a></li>
@@ -520,7 +526,16 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 						</nav>
 						<!-- End navbar -->
-
+						<!-- <div class="col-md-12">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+				    </div> -->
+						<!-- Begin logo  -->
 					</div> <!-- /.container -->
 				</div>
 				<!-- End header content -->
@@ -1671,31 +1686,18 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Erwachsene</td>
-        <td><?php echo $a1day; ?>&#8364</td>
-        <td><?php echo $ah1day; ?>&#8364</td>
-      </tr>
-      <tr>
-        <td>Sch&#252ler, Studenten, Senioren     </td>
-        <td><?php echo $s1day; ?>&#8364</td>
-        <td><?php echo $sh1day; ?>&#8364</td>
-      </tr>
-      <tr>
-        <td>Kinder (unter 14 Jahre)</td>
-        <td><?php echo $k1day; ?>&#8364</td>
-        <td><?php echo $kh1day; ?>&#8364</td>
-      </tr>
-       <tr>
-        <td>Kleinkinder (unter 4 Jahre)</td>
-        <td><?php echo $kk1day; ?>&#8364</td>
-        <td><?php echo $kkh1day; ?>&#8364</td>
-      </tr>
-       <tr>
-        <td>Familienkarte</td>
-        <td><?php echo $f1day; ?>&#8364</td>
-        <td><?php echo $fh1day; ?>&#8364</td>
-      </tr>
+			<?php
+			while ($row=mysql_fetch_array($preise_table))
+			{
+			 ?>
+			 <tr id="row<?php echo $row['id'];?>">
+				<td id="description<?php echo $row['id'];?>"><?php echo $row['description'];?></td>
+				<td id="normalhour<?php echo $row['id'];?>"><?php echo $row['normalhour'];?>&#8364</td>
+				<td id="happyhour<?php echo $row['id'];?>"><?php echo $row['happyhour'];?>&#8364</td>
+			 </tr>
+			 <?php
+			}
+			?>
     </tbody>
   </table>
 </div>
@@ -1734,30 +1736,21 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Erwachsene</td>
-        <td><?php echo $a1month; ?>&#8364</td>
-        <td><?php echo $a3month; ?>&#8364</td>
-        <td><?php echo $a6month; ?>&#8364</td>
-        <td><?php echo $ayear; ?>&#8364</td>
-        <td><?php echo $ayyear; ?>&#8364</td>
-      </tr>
-      <tr>
-        <td>Sch&#252ler, Studenten, Senioren  </td>
-        <td><?php echo $s1month; ?>&#8364</td>
-        <td><?php echo $s3month; ?>&#8364</td>
-        <td><?php echo $s6month; ?>&#8364</td>
-        <td><?php echo $syear; ?>&#8364</td>
-        <td><?php echo $syyear; ?>&#8364</td>
-      </tr>
-      <tr>
-        <td>Kinder (unter 14 Jahre)</td>
-         <td><?php echo $k1month; ?>&#8364</td>
-        <td><?php echo $k3month; ?>&#8364</td>
-        <td><?php echo $k6month; ?>&#8364</td>
-        <td><?php echo $kyear; ?>&#8364</td>
-        <td><?php echo $kyyear; ?>&#8364</td>
-      </tr>
+			<?php
+			while ($row=mysql_fetch_array($eintrittskarten_table))
+			{
+			 ?>
+			 <tr id="row<?php echo $row['id'];?>">
+				<td id="description<?php echo $row['id'];?>"><?php echo $row['description'];?></td>
+				<td id="one11er<?php echo $row['id'];?>"><?php echo $row['one11er'];?>&#8364</td>
+				<td id="two3monate<?php echo $row['id'];?>"><?php echo $row['two3monate'];?>&#8364</td>
+				<td id="threehalbjahr<?php echo $row['id'];?>"><?php echo $row['threehalbjahr'];?>&#8364</td>
+				<td id="fourjahr<?php echo $row['id'];?>"><?php echo $row['fourjahr'];?>&#8364</td>
+				<td id="fivejahrmtl<?php echo $row['id'];?>"><?php echo $row['fivejahrmtl'];?>&#8364</td>
+			 </tr>
+			 <?php
+			}
+			?>
     </tbody>
   </table>
 </div>
@@ -1808,21 +1801,18 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Leihschuhe</td>
-        <td><?php echo $eel; ?>&#8364</td>
-        <td><?php echo $ekl; ?>&#8364</td>
-      </tr>
-      <tr>
-        <td>Chalkbags</td>
-        <td><?php echo $eec; ?>&#8364</td>
-        <td><?php echo $ekc; ?>&#8364</td>
-      </tr>
-      <tr>
-        <td>B&#252rsten</td>
-        <td><?php echo $eeb; ?>&#8364 </td>
-        <td><?php echo $ekb; ?>&#8364</td>
-      </tr>
+			<?php
+			while ($row=mysql_fetch_array($leihequipment_table))
+			{
+			 ?>
+			 <tr id="row<?php echo $row['id'];?>">
+				<td id="description<?php echo $row['id'];?>"><?php echo $row['description'];?></td>
+				<td id="erwachsene<?php echo $row['id'];?>"><?php echo $row['erwachsene'];?>&#8364</td>
+				<td id="kinder<?php echo $row['id'];?>"><?php echo $row['kinder'];?>&#8364</td>
+			 </tr>
+			 <?php
+			}
+			?>
     </tbody>
   </table>
 </div>
