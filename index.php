@@ -211,6 +211,7 @@ $ekb= str_replace(".",",",$ekb );
 
 		<!-- Libs and Plugins CSS -->
 		<link rel="stylesheet" href="assets/vendor/animate.min.css"> <!-- Animations CSS (more info: http://daneden.github.io/animate.css) -->
+		<link rel="stylesheet" href="assets/css/contact-buttons.css">
 		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css"> <!-- Font Icons (more info: http://fortawesome.github.io/Font-Awesome) -->
 		<link rel="stylesheet" href="assets/vendor/ytplayer/css/jquery.mb.YTPlayer.min.css"> <!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
 		<link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.css"> <!-- Owl Carousel CSS (more info: http://www.owlcarousel.owlgraphic.com) -->
@@ -2950,6 +2951,9 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 		<!-- Core JS -->
 		<script src="assets/vendor/jquery/jquery-1.11.1.min.js"></script> <!-- jquery JS (more info: https://jquery.com) -->
+		<script src="assets/js/jquery.contact-buttons.js"></script>
+		<script src="assets/js/demo.js"></script>
+
 		<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- bootstrap JS (more info: http://getbootstrap.com) -->
 
 		<!-- Libs and Plugins JS -->
