@@ -26,9 +26,8 @@
 $.contactButtons({
   effect  : 'slide-on-scroll',
   buttons : {
-    'facebook':   { class: 'facebook',     use: true, link: 'https://www.facebook.com/pages/mycompany', extras: 'target="_blank"' },
-    'google':     { class: 'gplus',        use: true, link: 'https://plus.google.com/myidongoogle' },
-    'twitter':    { class: 'twitter',      use: true, link: 'http://twitter.com', icon: 'twitter', title: 'Follow on Twitter'  },
-    'instagram':      { class: 'instagram',    use: true, link: 'http://instagram.com',icon: 'instagram' }
+    'facebook':   { class: 'facebook',     use: true, link: 'https://www.facebook.com/MonkeyCage2016/', extras: 'target="_blank"' },
+    'twitter':    { class: 'twitter',      use: true, link: 'https://twitter.com/MonkeyCage2016', icon: 'twitter', title: 'Follow on Twitter'  },
+    'instagram':      { class: 'instagram',    use: true, link: 'https://www.instagram.com/monkey_cage/',icon: 'instagram' }
   }
 });

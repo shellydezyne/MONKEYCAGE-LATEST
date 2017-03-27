@@ -18,6 +18,8 @@ $eintrittskarten_table = mysql_query("SELECT * FROM eintrittskarten",$conn);
 
 
 $pdf = $get_value['pdf'];
+$pdf2 = $get_value['pdf2'];
+
 
 $title =$get_value['title'];
 $content =$get_value['content'];
@@ -29,6 +31,8 @@ $tf3 = $get_value['tf3'];
 $tc3 = $get_value['tc3'];
 $to1 = $get_value['to1'];
 $co1 = $get_value['co1'];
+$to1b = $get_value['to1b'];
+$co1b = $get_value['co1b'];
 $to2 = $get_value['to2'];
 $co2 = $get_value['co2'];
 $to3 = $get_value['to3'];
@@ -499,20 +503,22 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									<!-- End dropdown -->
 
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-2">Newsfeed Info</a></li>
+									<li><a class="mlc sm-scroll" href="#section-2">Info</a></li>
+									<li><span class="nav-link-separator">/</span></li>
+									<li><a class="mlc sm-scroll" href="#section-2a">Newsfeed</a></li>
 									<li><span class="nav-link-separator">/</span></li>
 									<li><a class="mlc sm-scroll" href="#section-3">Kurse</a></li>
 									<li><span class="nav-link-separator">/</span></li>
 									<li><a class="mlc sm-scroll" href="#section-5">Yoga</a></li>
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Geburtstage & Events</a></li>
+									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf2; ?>">Geburtstage & Events</a></li>
 									<li><span class="nav-link-separator">/</span></li>
 								<!--	<li><a class="mlc sm-scroll" href="#section-7">Social Media</a></li>-->
 									<li><a class="mlc sm-scroll" href="#section-4">Eintrittspreise & Verleih</a></li>
 												<li><span class="nav-link-separator">/</span></li>
 													<li><a class="mlc sm-scroll" href="#section-8">Anfahrt & Kontakt</a></li>
 													<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="admin/album.php">Galerie</a></li>
+									<li><a class="mlc sm-scroll" href="#section-9">Galerie</a></li>
 
 									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf; ?>">Essen & Trinken</a></li>
 									<li><a class="mlc sm-scroll" href="http://monkey-cage.cwlshop.com/ ">Shop</a></li>
@@ -908,6 +914,65 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 			</section>
 			<!-- End section 2 -->
+
+			<!-- =================================
+			///// Begin section 2 (services) /////
+			======================================
+			* Use class "angle-left-top", "angle-right-top", "angle-left-bottom", "angle-right-bottom" to change section angle.
+			* Use class "bg-image-fixed" to make background image fixed (otherwise use class "bg-image").
+			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
+			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
+			-->
+			<section id="section-2a" class="services-section bg-dark angle-right-top angle-left-bottom bg-image-parallax" style="background-image: url(assets/img/misc/bg-4.jpg); padding: 80px 0px  140px 0px; ">
+
+				<!-- Element cover
+				===================
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
+				-->
+				<span class="cover bg-transparent-9-dark"></span>
+
+				<div class="container">
+					<div class="row">
+
+						<!-- Left column -->
+						<div class="col-md-12">
+
+							<!-- Begin heading
+							===================
+							* Use class "heading-center" or "heading-right" to align heading.
+							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
+							* Use class "heading-hover" to enable heading hover effect.
+							* Use class "heading-uppercase" to enable uppercase letters.
+							-->
+							<div class="heading heading-lg text-white heading-hover wow fadeIn" data-wow-delay="0.2s">
+								<span class="heading-title-ghost"></span>
+								<h2 class="heading-title">Newsfeed</h2>
+
+								<!-- Begin divider
+								===================
+								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
+								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
+								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
+								-->
+								<hr class="hr-width-1 hr-5x border-main">
+								<!-- End divider -->
+
+								<p class="heading-tescription lead text-gray-2" style="text-align: justify;" >
+									<?php echo $co1b; ?>
+
+								</p>
+
+								<!--<a href="#" target="_blank" class="btn btn-white-bordered btn-rounded"><i class="fa fa-external-link"></i> </a>-->
+							</div>
+							<!-- End heading -->
+
+						</div> <!-- /.col -->
+				</div> <!-- /.container -->
+			</div>
+
+			</section>
+			<!-- End section 2 -->
+
 
 
 			<!-- ==================================
@@ -2866,7 +2931,8 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									&nbsp;
 
 								</div>
-				<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/4be06b86025151c39a31f5424358f756.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+				<!-- LightWidget WIDGET --><!--<script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/4be06b86025151c39a31f5424358f756.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe> -->
+				<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/8e7a74f4b05b593494387e86561589c1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 <!--<script async src="https://d36hc0p18k1aoc.cloudfront.net/pages/a5b5e5.js"></script><div class="tintup" data-id="saurav-rav67" data-columns="" data-mobilescroll="true"    data-infinitescroll="true" data-personalization-id="817636" style="height:300px;width:100%;"><a href="http://www.tintup.com/blog/the-best-instagram-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">instagram widget</a></div>
 -->
 

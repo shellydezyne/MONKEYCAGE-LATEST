@@ -48,6 +48,9 @@ $coa3p = $get_info['coa3'];
 $toa4p = $get_info['toa4'];
 $coa4p = $get_info['coa4'];
 
+$to1bp = $get_info['to1b'];
+$co1bp = $get_info['co1b'];
+
 //prices
 /*
 $a1dayp = $get_info['a1day'];
@@ -405,7 +408,7 @@ function textCounter3(x, y) {
 <h2  style="color:red;" >Geburtstage & Events</h2>
 <div class="col-lg-12" >
 
-<h4><a href="pdf1.php" target="blank"> PDF</a></h4>
+<h4><a href="pdf2.php" target="blank"> PDF</a></h4>
 
 </div>
 
@@ -562,6 +565,49 @@ function textCounter3(x, y) {
 
           	 	</div>
 
+<h2  style="color:red;" >Newsfeed</h2>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+  <div class="table-responsive">
+  <table class="table">
+   <tr>
+     <th>Title</th>
+
+   </tr>
+   <tr>
+     <td><textarea rows="1" cols="50" name="to1b"  onKeyDown="textCounter1(this.form.to1b,this.form.countDisplayto1b);" onKeyUp="textCounter1(this.form.to1b,this.form.countDisplayto1b);"><?php echo $to1bp; ?> </textarea>
+    <br>
+     <input readonly type="text" name="countDisplayto1b" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+   </tr>
+     <tr>
+
+     <th>Content</th>
+
+   </tr>
+  <tr>
+
+     <td><textarea rows="4" cols="50"  name="co1b" onKeyDown="textCounter3(this.form.co1b,this.form.countDisplayco1b);" onKeyUp="textCounter3(this.form.co1b,this.form.countDisplayco1b);"><?php echo $co1bp; ?> </textarea>
+
+     <br>
+      <input readonly type="text" name="countDisplayco1b" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+   </tr>
+     <tr>
+
+
+   </tr>
+  <!--	<tr>
+
+     <td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
+   </tr>-->
+  </table>
+ </div>
+ </div>
+</div>
 
 
 <h2  style="color:red;" >Kurse</h2>
@@ -1320,6 +1366,9 @@ $tc3= $_POST['tc3'];
 $to1 = $_POST['to1'];
 $co1 = $_POST['co1'];
 
+$to1b = $_POST['to1b'];
+$co1b = $_POST['co1b'];
+
 $to2 = $_POST['to2'];
 $co2 = $_POST['co2'];
 
@@ -1401,7 +1450,7 @@ $run_insert_update= mysql_query( $insert_update, $conn);
 */
 
 
-$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1',co1='$co1' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
+$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1', co1='$co1', to1b='$to1b', co1b='$co1b' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
 
 $run_insert_update= mysql_query( $insert_update, $conn);
 
