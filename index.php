@@ -19,6 +19,9 @@ $eintrittskarten_table = mysql_query("SELECT * FROM eintrittskarten",$conn);
 
 $pdf = $get_value['pdf'];
 $pdf2 = $get_value['pdf2'];
+$pdf3 = $get_value['pdf3'];
+$pdf4 = $get_value['pdf4'];
+$pdf5 = $get_value['pdf5'];
 
 
 $title =$get_value['title'];
@@ -33,12 +36,33 @@ $to1 = $get_value['to1'];
 $co1 = $get_value['co1'];
 $to1b = $get_value['to1b'];
 $co1b = $get_value['co1b'];
+
+$to1b1 = $get_value['to1b1'];
+$co1b1 = $get_value['co1b1'];
+$to1b2 = $get_value['to1b2'];
+$co1b2 = $get_value['co1b2'];
+$to1b3 = $get_value['to1b3'];
+$co1b3 = $get_value['co1b3'];
+$to1b4 = $get_value['to1b4'];
+$co1b4 = $get_value['co1b4'];
+
+
+
 $to2 = $get_value['to2'];
 $co2 = $get_value['co2'];
 $to3 = $get_value['to3'];
 $co3 = $get_value['co3'];
 $to4 = $get_value['to4'];
 $co4 = $get_value['co4'];
+$to5 = $get_value['to5'];
+$co5 = $get_value['co5'];
+$to6 = $get_value['to6'];
+$co6 = $get_value['co6'];
+$to7 = $get_value['to7'];
+$co7 = $get_value['co7'];
+$to8 = $get_value['to8'];
+$co8 = $get_value['co8'];
+
 $toa1 = $get_value['toa1'];
 $coa1 = $get_value['coa1'];
 $toa2 = $get_value['toa2'];
@@ -178,12 +202,7 @@ $ekc = $get_value['ekc'];
 
 $ekc= str_replace(".",",",$ekc );
 $ekb=$get_value['ekb'];
-
 $ekb= str_replace(".",",",$ekb );
-
-
-
-
 ?>
 
 <html lang="en">
@@ -255,9 +274,13 @@ $ekb= str_replace(".",",",$ekb );
 	   <![endif]-->
 	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-
-
-
+		 <style>
+	   .carousel-inner > .item > img,
+	   .carousel-inner > .item > a > img {
+	       width: 50%;
+	       margin: auto;
+	   }
+	   </style>
 
 	</head>
 
@@ -511,7 +534,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 									<li><span class="nav-link-separator">/</span></li>
 									<li><a class="mlc sm-scroll" href="#section-5">Yoga</a></li>
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="admin/admin_pdf/<?php echo $pdf2; ?>">Geburtstage & Events</a></li>
+									<li><a class="mlc sm-scroll" href="#section-5a">Geburtstage & Events</a></li>
 									<li><span class="nav-link-separator">/</span></li>
 								<!--	<li><a class="mlc sm-scroll" href="#section-7">Social Media</a></li>-->
 									<li><a class="mlc sm-scroll" href="#section-4">Eintrittspreise & Verleih</a></li>
@@ -1113,6 +1136,59 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							</div>
 
 							</div>
+							<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+							<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white; ">
+
+									<h3> <?php echo $to5; ?> </h3>
+									<p><?php echo $co5; ?> </p>
+
+
+								</div>
+
+								</div>
+
+
+								<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+							<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+									<h3> <?php echo $to6; ?> </h3>
+									<p><?php echo $co6; ?> </p>
+
+
+								</div>
+
+								</div>
+
+
+
+
+									<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+							<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+									<h3> <?php echo $to7; ?> </h3>
+									<p><?php echo $co7; ?> </p>
+
+
+								</div>
+
+								</div>
+
+
+
+									<div class="col-lg-6" style="padding: 10px 10px 10px 10px;">
+
+							<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+									<h3> <?php echo $to8; ?> </h3>
+									<p><?php echo $co8; ?> </p>
+
+
+								</div>
+
+								</div>
 
 
 
@@ -1598,6 +1674,252 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							</div>
 </section>
 
+<section id="section-5a" class="prices-section bg-dark angle-right-top angle-left-bottom bg-image-parallax" style="background-image: url(assets/img/misc/bg-3.jpg);  padding: 80px 0px  140px 0px; ">
+
+	<div class="container">
+		<div class="row wow fadeIn">
+
+			<!-- Left column -->
+			<div class="col-md-6">
+
+				<!-- Begin heading
+				===================
+				* Use class "heading-center" or "heading-right" to align heading.
+				* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
+				* Use class "heading-hover" to enable heading hover effect.
+				* Use class "heading-uppercase" to enable uppercase letters.
+				-->
+				<div class="heading heading-lg heading-hover">
+					<span class="heading-title-ghost"></span>
+					<h2 class="heading-title " style="color:white;">Geburtstage</h2>
+
+					<!-- Begin divider
+					===================
+					* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
+					* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
+					* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
+					-->
+					<hr class="hr-width-1 hr-5x border-main">
+					<!-- End divider -->
+
+				</div>
+				<!-- End heading -->
+
+			</div> <!-- /.col -->
+
+			<!-- Right column -->
+			<div class="col-md-6">
+
+
+
+			</div> <!-- /.col -->
+
+		</div> <!-- /.row -->
+	</div> <!-- /.container -->
+
+
+	<div class="container">
+
+		<!-- Begin isotope
+		===================
+		* Use classes "gutter-1", "gutter-2" or "gutter-3" to add more space between items.
+		* Use class "col-1", "col-2", "col-3", "col-4", "col-5" or "col-6" for columns.
+		-->
+		<div class="isotope popup-gallery gutter-2 col-3">
+
+			<!-- Begin isotope filter
+			===========================
+			<div class="isotope-filter">
+
+				<!-- Begin isotope filter toggle button
+				<div class="navbar-header">
+
+				</div>
+
+
+				<!-- End isotope filter toggle button -->
+
+				<!-- Begin isotope filter links
+				==================================
+				* Use class "text-center" or "text-right" to align isotope filter links.
+				* Note: class "mlc" = close filter menu when clicking filter link.
+
+				<div class="isotope-filter-links collapse navbar-collapse no-padding wow fadeIn" id="isotope-filter-collapse">
+					<a class="active" href="#" data-filter="*" style="color:white;">Gym</a>
+					<a href="#" data-filter=".photography" style="color:white;">Coaches</a>
+				<!--	<a href="#" data-filter=".web-design">Gallery</a>
+					<a href="#" data-filter=".graphics">Graphics</a>
+					<a href="#" data-filter=".branding, .web-design">Mockups</a>
+				</div>
+				<!-- End isotope filter links
+
+			</div>
+			<!-- End isotope filter -->
+
+			<div class="col-lg-9" style="padding: 10px 10px 10px 10px;">
+
+			<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white; ">
+
+					<h3> <?php echo $to1b1; ?> </h3>
+					<p><?php echo $co1b1; ?> </p>
+
+
+				</div>
+
+				</div>
+
+
+				<div class="col-lg-3" style="padding: 10px 10px 10px 10px;">
+
+			<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+					<h4> Download PDF Datei </h4>
+					<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf2; ?>">Download</a>
+					<p> Size: 23Mb </p>
+
+
+				</div>
+
+				</div>
+
+
+
+
+
+			</div>
+		</div>
+		<div class="container">
+			<div class="row wow fadeIn">
+
+				<!-- Left column -->
+				<div class="col-md-6">
+
+					<!-- Begin heading
+					===================
+					* Use class "heading-center" or "heading-right" to align heading.
+					* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
+					* Use class "heading-hover" to enable heading hover effect.
+					* Use class "heading-uppercase" to enable uppercase letters.
+					-->
+					<div class="heading heading-lg heading-hover">
+						<span class="heading-title-ghost"></span>
+						<h2 class="heading-title " style="color:white;">Events</h2>
+
+						<!-- Begin divider
+						===================
+						* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
+						* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
+						* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
+						-->
+						<hr class="hr-width-1 hr-5x border-main">
+						<!-- End divider -->
+
+					</div>
+					<!-- End heading -->
+
+				</div> <!-- /.col -->
+
+				<!-- Right column -->
+				<div class="col-md-6">
+
+
+
+				</div> <!-- /.col -->
+
+			</div> <!-- /.row -->
+		</div> <!-- /.container -->
+
+		<div class="container">
+
+			<!-- Begin isotope
+			===================
+			* Use classes "gutter-1", "gutter-2" or "gutter-3" to add more space between items.
+			* Use class "col-1", "col-2", "col-3", "col-4", "col-5" or "col-6" for columns.
+			-->
+			<div class="isotope popup-gallery gutter-2 col-3">
+
+		<div class="col-lg-9" style="padding: 10px 10px 10px 10px;">
+
+<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+		<h3> <?php echo $to1b2; ?> </h3>
+		<p><?php echo $co1b2; ?> </p>
+
+
+	</div>
+
+	</div>
+
+
+
+		<div class="col-lg-3" style="padding: 10px 10px 10px 10px;">
+
+<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+		<h4> Download PDF Datei  </h4>
+		<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf3; ?>">Download</a>
+    <p> Size: 23Mb </p>
+
+	</div>
+
+	</div>
+	<div class="col-lg-9" style="padding: 10px 10px 10px 10px;">
+
+<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+	<h3> <?php echo $to1b3; ?> </h3>
+	<p><?php echo $co1b3; ?> </p>
+
+
+</div>
+
+</div>
+
+
+
+	<div class="col-lg-3" style="padding: 10px 10px 10px 10px;">
+
+<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+	<h4> Download PDF Datei  </h4>
+	<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf4; ?>">Download</a>
+<p> Size: 23Mb </p>
+
+</div>
+
+</div>
+<div class="col-lg-9" style="padding: 10px 10px 10px 10px;">
+
+<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+<h3> <?php echo $to1b4; ?> </h3>
+<p><?php echo $co1b4; ?> </p>
+
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3" style="padding: 10px 10px 10px 10px;">
+
+<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
+
+<!--
+<h3> <?php echo $toa4; ?> </h3>
+<p><?php echo $coa4; ?> </p> -->
+<h4> Download PDF Datei  </h4>
+<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf5; ?>">Download</a>
+<p> Size: 23Mb </p>
+</div>
+
+</div>
+</div>
+</div>
+
+
+</section>
 
 			<!-- ===============================
 			///// Begin section 4 (prices) /////
@@ -2913,7 +3235,7 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 				===================
 				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
-				<span class="cover bg-transparent-9-dark bg-transparent-gradient-1"></span>
+				<!-- <span class="cover bg-transparent-9-dark bg-transparent-gradient-1"></span> -->
 
 				<div class="container">
 				<!-- Left column -->
@@ -2931,8 +3253,13 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 									&nbsp;
 
 								</div>
+							</div>
+						</div>
+					</div>
 				<!-- LightWidget WIDGET --><!--<script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/4be06b86025151c39a31f5424358f756.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe> -->
-				<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/8e7a74f4b05b593494387e86561589c1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+				<!-- LightWidget WIDGET -->
+
+				<script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/8e7a74f4b05b593494387e86561589c1.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 <!--<script async src="https://d36hc0p18k1aoc.cloudfront.net/pages/a5b5e5.js"></script><div class="tintup" data-id="saurav-rav67" data-columns="" data-mobilescroll="true"    data-infinitescroll="true" data-personalization-id="817636" style="height:300px;width:100%;"><a href="http://www.tintup.com/blog/the-best-instagram-widget" style="width:118px;height:31px;background-image:url(//d33w9bm0n1egwm.cloudfront.net/assets/logos/poweredbytintsmall.png);position:absolute;bottom:10px;right: 20px;text-indent: -9999px;z-index:9;">instagram widget</a></div>
 -->
 
@@ -2964,17 +3291,6 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 							</div>-->
 
-
-           <div class="container">
-					<div class="row wow fadeIn">
-						<div class="col-md-4">
-<br>
-
-<br>
-
-</div>
-</div>
-</div>
 
 
 			</section>

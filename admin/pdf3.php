@@ -22,7 +22,7 @@ include("db.php");
 ?>
 <html>
 <head>
-  <title>Geburtstage PDF Upload</title>
+  <title>Event 1 PDF Upload</title>
     <meta charset="utf-8">
   <meta name="viewport">
 
@@ -126,13 +126,14 @@ include("db.php");
          move_uploaded_file($file_tmp,"admin_pdf/$file_name");
          echo "Success";
       }else{
+         echo "Failure";
          print_r($errors);
       }
 
 
    // $insert_product = "INSERT INTO products (product_image ) VALUES ('$file_tmp')  ";
 
-    $insert_product = "UPDATE main SET pdf2= '$file_name' ";
+    $insert_product = "UPDATE main SET pdf3= '$file_name' ";
     $run_insert_product = mysql_query( $insert_product, $conn);
 
 

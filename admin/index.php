@@ -38,6 +38,16 @@ $to3p = $get_info['to3'];
 $co3p = $get_info['co3'];
 $to4p = $get_info['to4'];
 $co4p = $get_info['co4'];
+$to5p = $get_info['to5'];
+$co5p = $get_info['co5'];
+$to6p = $get_info['to6'];
+$co6p = $get_info['co6'];
+$to7p = $get_info['to7'];
+$co7p = $get_info['co7'];
+$to8p = $get_info['to8'];
+$co8p = $get_info['co8'];
+
+
 $toa1p = $get_info['toa1'];
 
 $coa1p = $get_info['coa1'];
@@ -50,6 +60,18 @@ $coa4p = $get_info['coa4'];
 
 $to1bp = $get_info['to1b'];
 $co1bp = $get_info['co1b'];
+
+$to1bp1 = $get_info['to1b1'];
+$co1bp1 = $get_info['co1b1'];
+
+$to1bp2 = $get_info['to1b2'];
+$co1bp2 = $get_info['co1b2'];
+
+$to1bp3 = $get_info['to1b3'];
+$co1bp3 = $get_info['co1b3'];
+
+$to1bp4 = $get_info['to1b4'];
+$co1bp4 = $get_info['co1b4'];
 
 //prices
 /*
@@ -405,11 +427,180 @@ function textCounter3(x, y) {
 </div>
 <br>
 <br>
-<h2  style="color:red;" >Geburtstage & Events</h2>
-<div class="col-lg-12" >
+<h2  style="color:red;" >Geburtstage</h2>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+  <div class="table-responsive">
+  <table class="table">
+   <tr>
+     <th>Geburtstage Title 1</th>
 
-<h4><a href="pdf2.php" target="blank"> PDF</a></h4>
+   </tr>
+   <tr>
+     <td><textarea rows="1" cols="50" name="to1b1"  onKeyDown="textCounter1(this.form.to1b1,this.form.countDisplayto1b1);" onKeyUp="textCounter1(this.form.to1b1,this.form.countDisplayto1b1);"><?php echo $to1bp1; ?> </textarea>
+    <br>
+     <input readonly type="text" name="countDisplayto1b1" size="3" maxlength="3" value="50"> Characters Remaining</td>
 
+
+   </tr>
+     <tr>
+
+     <th>Geburtstage Content 1</th>
+
+   </tr>
+  <tr>
+
+     <td><textarea rows="4" cols="50"  name="co1b1" onKeyDown="textCounter3(this.form.co1b1,this.form.countDisplayco1b1);" onKeyUp="textCounter3(this.form.co1b1,this.form.countDisplayco1b1);"><?php echo $co1bp1; ?> </textarea>
+
+     <br>
+      <input readonly type="text" name="countDisplayco1b1" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+   </tr>
+     <tr>
+
+
+   </tr>
+  <!--	<tr>
+
+     <td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
+   </tr>-->
+  </table>
+  <h4><a href="pdf2.php" target="blank"> Geburtstage PDF</a></h4>
+ </div>
+ </div>
+</div>
+
+<h2  style="color:red;" >Events</h2>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+  <div class="table-responsive">
+  <table class="table">
+   <tr>
+     <th>Event Title 1</th>
+
+   </tr>
+   <tr>
+     <td><textarea rows="1" cols="50" name="to1b2"  onKeyDown="textCounter1(this.form.to1b2,this.form.countDisplayto1b2);" onKeyUp="textCounter1(this.form.to1b2,this.form.countDisplayto1b2);"><?php echo $to1bp2; ?> </textarea>
+    <br>
+     <input readonly type="text" name="countDisplayto1b2" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+   </tr>
+     <tr>
+
+     <th>Event Content 1</th>
+
+   </tr>
+  <tr>
+
+     <td><textarea rows="4" cols="50"  name="co1b2" onKeyDown="textCounter3(this.form.co1b2,this.form.countDisplayco1b2);" onKeyUp="textCounter3(this.form.co1b2,this.form.countDisplayco1b2);"><?php echo $co1bp2; ?> </textarea>
+
+     <br>
+      <input readonly type="text" name="countDisplayco1b2" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+   </tr>
+     <tr>
+
+
+   </tr>
+  <!--	<tr>
+
+     <td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
+   </tr>-->
+  </table>
+  <h4><a href="pdf3.php" target="blank"> Event 1 PDF</a></h4>
+ </div>
+ </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+  <div class="table-responsive">
+  <table class="table">
+   <tr>
+     <th>Event Title 2</th>
+
+   </tr>
+   <tr>
+     <td><textarea rows="1" cols="50" name="to1b3"  onKeyDown="textCounter1(this.form.to1b3,this.form.countDisplayto1b3);" onKeyUp="textCounter1(this.form.to1b3,this.form.countDisplayto1b3);"><?php echo $to1bp3; ?> </textarea>
+    <br>
+     <input readonly type="text" name="countDisplayto1b3" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+   </tr>
+     <tr>
+
+     <th>Event Content 2</th>
+
+   </tr>
+  <tr>
+
+     <td><textarea rows="4" cols="50"  name="co1b3" onKeyDown="textCounter3(this.form.co1b3,this.form.countDisplayco1b3);" onKeyUp="textCounter3(this.form.co1b3,this.form.countDisplayco1b3);"><?php echo $co1bp3; ?> </textarea>
+
+     <br>
+      <input readonly type="text" name="countDisplayco1b3" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+   </tr>
+     <tr>
+
+
+   </tr>
+  <!--	<tr>
+
+     <td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
+   </tr>-->
+  </table>
+  <h4><a href="pdf4.php" target="blank"> Event 2 PDF</a></h4>
+ </div>
+ </div>
+</div>
+<div class="col-lg-12">
+  <div class="col-lg-6">
+  <div class="table-responsive">
+  <table class="table">
+   <tr>
+     <th>Event Title 3</th>
+
+   </tr>
+   <tr>
+     <td><textarea rows="1" cols="50" name="to1b4"  onKeyDown="textCounter1(this.form.to1b4,this.form.countDisplayto1b4);" onKeyUp="textCounter1(this.form.to1b4,this.form.countDisplayto1b4);"><?php echo $to1bp4; ?> </textarea>
+    <br>
+     <input readonly type="text" name="countDisplayto1b4" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+   </tr>
+     <tr>
+
+     <th>Event Content 3</th>
+
+   </tr>
+  <tr>
+
+     <td><textarea rows="4" cols="50"  name="co1b4" onKeyDown="textCounter3(this.form.co1b4,this.form.countDisplayco1b4);" onKeyUp="textCounter3(this.form.co1b4,this.form.countDisplayco1b4);"><?php echo $co1bp4; ?> </textarea>
+
+     <br>
+      <input readonly type="text" name="countDisplayco1b4" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+   </tr>
+     <tr>
+
+
+   </tr>
+  <!--	<tr>
+
+     <td><a href="pic3.php" target="blank" >Bild hochladen3</a></td>
+   </tr>-->
+  </table>
+  <h4><a href="pdf5.php" target="blank"> Event 3 PDF</a></h4>
+ </div>
+ </div>
 </div>
 
 
@@ -775,8 +966,177 @@ function textCounter3(x, y) {
           	 </table>
           	</div>
           </div>
-      </div>
 
+
+      </div>
+      <div class="col-lg-12">
+  			<div class="col-lg-6">
+  				   <div class="table-responsive">
+          	 <table class="table">
+          	 	<tr>
+          	 		<th>Title5</th>
+
+          	 	</tr>
+          	 	<tr>
+                <td><textarea rows="1" cols="50" name="to5"  onKeyDown="textCounter1(this.form.to5,this.form.countDisplayto5);" onKeyUp="textCounter1(this.form.to5,this.form.countDisplayto5);"><?php echo $to5p; ?> </textarea>
+               <br>
+                 <input readonly type="text" name="countDisplayto5" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+              </tr>
+          	 		<tr>
+
+          	 		<th>Content5</th>
+
+          	 	</tr>
+          	 	 <tr>
+
+                <td><textarea rows="4" cols="50"  name="co5" onKeyDown="textCounter3(this.form.co5,this.form.countDisplayco5);" onKeyUp="textCounter3(this.form.co5,this.form.countDisplayco5);"><?php echo $co5p; ?> </textarea>
+
+                <br>
+                 <input readonly type="text" name="countDisplayco5" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+              </tr>
+          	 		<tr>
+
+
+          	 	</tr>
+          	 <!--	<tr>
+
+          	 		<td><a href="pic5.php" target="blank" >Bild hochladen5</a></td>
+          	 	</tr>-->
+          	 </table>
+          	</div>
+          </div>
+                  <div class="col-lg-6">
+  				   <div class="table-responsive">
+          	 <table class="table">
+          	 	<tr>
+          	 		<th>Title6</th>
+
+          	 	</tr>
+          	 <tr>
+                <td><textarea rows="1" cols="50" name="to6"  onKeyDown="textCounter1(this.form.to6,this.form.countDisplayto6);" onKeyUp="textCounter1(this.form.to6,this.form.countDisplayto6);"><?php echo $to6p; ?> </textarea>
+               <br>
+                 <input readonly type="text" name="countDisplayto6" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+              </tr>
+          	 		<tr>
+
+          	 		<th>Content6</th>
+
+          	 	</tr>
+          	 	 <tr>
+
+                <td><textarea rows="4" cols="50"  name="co6" onKeyDown="textCounter3(this.form.co6,this.form.countDisplayco6);" onKeyUp="textCounter3(this.form.co6,this.form.countDisplayco6);"><?php echo $co6p; ?> </textarea>
+
+                <br>
+                 <input readonly type="text" name="countDisplayco6" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+              </tr>
+          	 		<tr>
+
+
+          	 	</tr>
+          <!--	 	<tr>
+
+          	 		<td><a href="pic6.php" target="blank" >Bild hochladen6</a></td>
+          	 	</tr>-->
+          	 </table>
+          	</div>
+          </div>
+
+
+      </div>
+      <div class="col-lg-12">
+        <div class="col-lg-6">
+             <div class="table-responsive">
+             <table class="table">
+              <tr>
+                <th>Title7</th>
+
+              </tr>
+              <tr>
+                <td><textarea rows="1" cols="50" name="to7"  onKeyDown="textCounter1(this.form.to7,this.form.countDisplayto7);" onKeyUp="textCounter1(this.form.to7,this.form.countDisplayto7);"><?php echo $to7p; ?> </textarea>
+               <br>
+                 <input readonly type="text" name="countDisplayto7" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+              </tr>
+                <tr>
+
+                <th>Content7</th>
+
+              </tr>
+               <tr>
+
+                <td><textarea rows="4" cols="50"  name="co7" onKeyDown="textCounter3(this.form.co7,this.form.countDisplayco7);" onKeyUp="textCounter3(this.form.co7,this.form.countDisplayco7);"><?php echo $co7p; ?> </textarea>
+
+                <br>
+                 <input readonly type="text" name="countDisplayco7" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+              </tr>
+                <tr>
+
+
+              </tr>
+             <!--	<tr>
+
+                <td><a href="pic5.php" target="blank" >Bild hochladen5</a></td>
+              </tr>-->
+             </table>
+            </div>
+          </div>
+                  <div class="col-lg-6">
+             <div class="table-responsive">
+             <table class="table">
+              <tr>
+                <th>Title8</th>
+
+              </tr>
+             <tr>
+                <td><textarea rows="1" cols="50" name="to8"  onKeyDown="textCounter1(this.form.to8,this.form.countDisplayto8);" onKeyUp="textCounter1(this.form.to8,this.form.countDisplayto8);"><?php echo $to8p; ?> </textarea>
+               <br>
+                 <input readonly type="text" name="countDisplayto8" size="3" maxlength="3" value="50"> Characters Remaining</td>
+
+
+              </tr>
+                <tr>
+
+                <th>Content8</th>
+
+              </tr>
+               <tr>
+
+                <td><textarea rows="4" cols="50"  name="co8" onKeyDown="textCounter3(this.form.co8,this.form.countDisplayco8);" onKeyUp="textCounter3(this.form.co8,this.form.countDisplayco8);"><?php echo $co8p; ?> </textarea>
+
+                <br>
+                 <input readonly type="text" name="countDisplayco8" size="3" maxlength="3" value="2000"> Characters Remaining</td>
+
+
+
+              </tr>
+                <tr>
+
+
+              </tr>
+          <!--	 	<tr>
+
+                <td><a href="pic6.php" target="blank" >Bild hochladen6</a></td>
+              </tr>-->
+             </table>
+            </div>
+          </div>
+
+
+      </div>
 
       <h2  style="color:red;" >Yoga</h2>
       <div class="col-lg-12">
@@ -1369,16 +1729,39 @@ $co1 = $_POST['co1'];
 $to1b = $_POST['to1b'];
 $co1b = $_POST['co1b'];
 
+$to1b1 = $_POST['to1b1'];
+$co1b1 = $_POST['co1b1'];
+
+$to1b2 = $_POST['to1b2'];
+$co1b2 = $_POST['co1b2'];
+
+$to1b3 = $_POST['to1b3'];
+$co1b3 = $_POST['co1b3'];
+
+$to1b4 = $_POST['to1b4'];
+$co1b4 = $_POST['co1b4'];
+
 $to2 = $_POST['to2'];
 $co2 = $_POST['co2'];
-
 
 $to3= $_POST['to3'];
 $co3 = $_POST['co3'];
 
-
 $to4 = $_POST['to4'];
 $co4 = $_POST['co4'];
+
+$to5 = $_POST['to5'];
+$co5 = $_POST['co5'];
+
+$to6 = $_POST['to6'];
+$co6 = $_POST['co6'];
+
+$to7 = $_POST['to7'];
+$co7 = $_POST['co7'];
+
+$to8 = $_POST['to8'];
+$co8 = $_POST['co8'];
+
 
 $toa1 = $_POST['toa1'];
 $coa1 = $_POST['coa1'];
@@ -1450,7 +1833,7 @@ $run_insert_update= mysql_query( $insert_update, $conn);
 */
 
 
-$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1', co1='$co1', to1b='$to1b', co1b='$co1b' ,to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
+$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1', co1='$co1', to1b='$to1b', co1b='$co1b', to1b1 ='$to1b1', co1b1 ='$co1b1' , to1b2 ='$to1b2', co1b2 ='$co1b2' , to1b3 ='$to1b3', co1b3 ='$co1b3' , to1b4 ='$to1b4', co1b4 ='$co1b4',to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,to5='$to5' , co5='$co5',to6='$to6' , co6='$co6' ,to7 ='$to7' , co7='$co7', to8 ='$to8' , co8 ='$co8' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
 
 $run_insert_update= mysql_query( $insert_update, $conn);
 
