@@ -49,6 +49,7 @@ $co1b4 = $get_value['co1b4'];
 
 
 $to2 = $get_value['to2'];
+$pdflabel = $get_value['pdflabel'];
 $co2 = $get_value['co2'];
 $to3 = $get_value['to3'];
 $co3 = $get_value['co3'];
@@ -261,7 +262,15 @@ $ekb= str_replace(".",",",$ekb );
 
 
     <!--    <script src="jim/dist/instagram.min.js"></script>-->
-
+		<style>
+		          .carousel-indicators {display:none;}
+		          .carousel-inner > .item > img,
+		          .carousel-inner > .item > a > img {
+		             margin: auto;
+								 width: auto;
+							   height:360px;
+		         }
+		</style>
 
 
 
@@ -273,14 +282,6 @@ $ekb= str_replace(".",",",$ekb );
 	   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	   <![endif]-->
 	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-		 <style>
-	   .carousel-inner > .item > img,
-	   .carousel-inner > .item > a > img {
-	       width: 50%;
-	       margin: auto;
-	   }
-	   </style>
 
 	</head>
 
@@ -1018,7 +1019,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 							-->
 							<div class="heading heading-lg heading-hover">
 								<span class="heading-title-ghost"></span>
-								<h2 class="heading-title " style="color:white;">Kurse</h2>
+								<h2 class="heading-title " style="color:#f7465b;">Kurse</h2>
 
 								<!-- Begin divider
 								===================
@@ -1761,7 +1762,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 			<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white; ">
 
 					<h3> <?php echo $to1b1; ?> </h3>
-					<p><?php echo $co1b1; ?> </p>
+					<?php echo $co1b1; ?>
 
 
 				</div>
@@ -1773,7 +1774,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 			<div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
 
-					<h4> Download PDF Datei </h4>
+					<h4><?php echo $pdflabel; ?></h4>
 					<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf2; ?>">Download</a>
 					<p> Size: 23Mb </p>
 
@@ -1843,7 +1844,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 <div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
 
 		<h3> <?php echo $to1b2; ?> </h3>
-		<p><?php echo $co1b2; ?> </p>
+		<?php echo $co1b2; ?>
 
 
 	</div>
@@ -1856,7 +1857,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 <div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
 
-		<h4> Download PDF Datei  </h4>
+		<h4><?php echo $pdflabel; ?></h4>
 		<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf3; ?>">Download</a>
     <p> Size: 23Mb </p>
 
@@ -1868,7 +1869,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 <div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
 
 	<h3> <?php echo $to1b3; ?> </h3>
-	<p><?php echo $co1b3; ?> </p>
+	<?php echo $co1b3; ?>
 
 
 </div>
@@ -1881,7 +1882,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 
 <div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
 
-	<h4> Download PDF Datei  </h4>
+	<h4><?php echo $pdflabel; ?></h4>
 	<a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf4; ?>">Download</a>
 <p> Size: 23Mb </p>
 
@@ -1893,7 +1894,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 <div style="border-style: solid;border-color: white; padding: 10px 10px 10px 10px; background-color:#F05165; color: white;">
 
 <h3> <?php echo $to1b4; ?> </h3>
-<p><?php echo $co1b4; ?> </p>
+<?php echo $co1b4; ?>
 
 
 </div>
@@ -1909,7 +1910,7 @@ wir freuen uns euch, nachdem die Ger&#220chtek&#220che in der Aschaffenburger Bo
 <!--
 <h3> <?php echo $toa4; ?> </h3>
 <p><?php echo $coa4; ?> </p> -->
-<h4> Download PDF Datei  </h4>
+<h4><?php echo $pdflabel; ?></h4>
 <a type="button" class="btn btn-primary btn-rounded btn-block btn-lg" name="contact_submit" href="admin/admin_pdf/<?php echo $pdf5; ?>">Download</a>
 <p> Size: 23Mb </p>
 </div>
@@ -3293,6 +3294,24 @@ Wichtig: Kindergruppen bitte nur nach vorab Anmeldung
 
 
 
+<div class="container">
+<!-- Left column -->
+		<div class="col-md-12">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			</div>
+			<div class="container">
+		 <div class="row wow fadeIn">
+			 <div class="col-md-12" style="text-align:center;">
+<br>
+<button id="action-button">Back to Gallery</button>
+<br>
+
+</div>
+</div>
+</div>
+		</div>
+</div>
+
 			</section>
 
 
@@ -3382,6 +3401,53 @@ $(document).ready(function(){
     $("#flip").click(function(){
         $("#panel").slideToggle("fast");
     });
+
+		$.ajax({
+			 url: 'admin/albums.php',
+			 data: {
+					format: 'json'
+			 },
+			 error: function() {
+					$('#myCarousel').html('<p>An error has occurred</p>');
+			 },
+			 dataType: 'json',
+			 success: function(data) {
+					//var $title = $('<h1>').text(data.talks[0].talk_title);
+					//var $description = $('<p>').text(data.talks[0].talk_description);
+					var slidelisting = '<ol class="carousel-indicators">';
+					var slidewrappers = '<div class="carousel-inner" role="listbox">';
+
+					//console.log(data);
+					for (var index = 0; index < data.length ; ++index) {
+						var album = data[index];
+						//console.log(album.name);
+						if (index == 0) {
+							slidelisting += '<li data-target="#myCarousel" data-slide-to="' + index + '" class="active"></li>';
+							slidewrappers += '<div class="item active"><img id="myCarousel_' + album.id + '" class="click_to_play" src="admin/' + album.filename + '" alt="' + album.name + '"><div class="carousel-caption"><h3>' + album.name +'</h3><p>' + album.description + '</p></div></div>';
+
+						} else {
+							slidelisting += '<li data-target="#myCarousel" data-slide-to="' + index + '" ></li>';
+							slidewrappers += '<div class="item"><img id="myCarousel_' + album.id + '"#f7465bsrc="admin/' + album.filename + '" alt="' + album.name + '"><div class="carousel-caption"><h3>' + album.name +'</h3><p>' + album.description + '</p></div></div>';
+						}
+
+					}
+					slidelisting += '</ol>';
+					slidewrappers += '</div>';
+
+					//console.log(slidelisting);
+					//console.log(slidewrappers);
+
+
+					var $navigation = '<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>';
+					$('#myCarousel').empty();
+					$('#myCarousel')
+						 .append(slidelisting)
+						 .append(slidewrappers)
+						 .append($navigation);
+			 },
+			 type: 'GET'
+		});
+
 });
 </script>
 

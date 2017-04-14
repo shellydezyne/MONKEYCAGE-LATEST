@@ -372,6 +372,8 @@ $select = mysql_query($select_query,$conn);
   <link href='assets/css/custom.css' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/jquery.js"></script> -->
+  <script type="text/javascript" src="assets/js/modify_image.js"></script>
   <script>
   /* must apply only after HTML has loaded */
   $(document).ready(function () {
@@ -559,14 +561,15 @@ $select = mysql_query($select_query,$conn);
        'id'=> $value['id']);
       $url = 'view_album.php?' . http_build_query($parameters);
       ?>
-      <div class="col-sm-3">
+      <div class="col-sm-3" id="image<?php echo $value['id']; ?>">
         <div class="card">
           <div class="card-image">
             <a href="<?php echo $value['filename']; ?>"><img src="<?php echo $value['filename']; ?>" class="img-responsive img-rounded"> </img></a>
           </div>
           <div class="card-text">
-            <?php echo $value['name']; ?>
+            <?php echo $value['description']; ?>
           </div>
+          <input type='button' class="delete_button" id="delete_button<?php echo $value['id'];?>" value="delete" onclick="delete_image('<?php echo $value['id'];?>');">
         </div>
       </div>
     <?php
@@ -592,14 +595,15 @@ $select = mysql_query($select_query,$conn);
     'id'=> $value['id']);
    $url = 'view_album.php?' . http_build_query($parameters);
    ?>
-   <div class="col-sm-3">
+   <div class="col-sm-3" id="image<?php echo $value['id']; ?>">
      <div class="card">
        <div class="card-image">
          <a href="<?php echo $value['filename']; ?>"><img src="<?php echo $value['filename']; ?>" class="img-responsive img-rounded"> </img></a>
        </div>
        <div class="card-text">
-         <?php echo $value['name']; ?>
+         <?php echo $value['description']; ?>
        </div>
+       <input type='button' class="delete_button" id="delete_button<?php echo $value['id'];?>" value="delete" onclick="delete_image('<?php echo $value['id'];?>');">
      </div>
    </div>
 <?php
@@ -628,14 +632,15 @@ $select = mysql_query($select_query,$conn);
     'id'=> $value['id']);
    $url = 'view_album.php?' . http_build_query($parameters);
    ?>
-   <div class="col-sm-3">
+   <div class="col-sm-3" id="image<?php echo $value['id']; ?>">
      <div class="card">
        <div class="card-image">
          <a href="<?php echo $value['filename']; ?>"><img src="<?php echo $value['filename']; ?>" class="img-responsive img-rounded"> </img></a>
        </div>
        <div class="card-text">
-         <?php echo $value['name']; ?>
+         <?php echo $value['description']; ?>
        </div>
+       <input type='button' class="delete_button" id="delete_button<?php echo $value['id'];?>" value="delete" onclick="delete_image('<?php echo $value['id'];?>');">
      </div>
    </div>
    <?php

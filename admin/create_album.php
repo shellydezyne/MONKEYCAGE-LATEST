@@ -23,7 +23,7 @@ include("db.php");
 ?>
 <html>
 <head>
-	<title>Leihequipment</title>
+	<title>Add Album</title>
 		<meta charset="utf-8">
   <meta name="viewport">
 
@@ -37,7 +37,6 @@ include("db.php");
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   <script type="text/javascript" src="assets/js/jquery.js"></script>
-  <script type="text/javascript" src="assets/js/modify_leihequipment.js"></script>
 
 </head>
 <body>
@@ -114,24 +113,42 @@ if(isset($_FILES['albumthumbnail']) && isset($_POST['albumname'])){
 
    if(empty($errors)==true){
       move_uploaded_file($file_tmp,"album/$file_name");
-      echo "Success";
+      //echo "Success";
    }else{
       print_r($errors);
    }
 
 
 // $insert_product = "INSERT INTO products (product_image ) VALUES ('$file_tmp')  ";
-  $insert_image = "INSERT INTO image (name,description,filename ) VALUES ('$file_name','$file_name','album/$file_name')  ";
-  $run_insert_album = mysql_query( $insert_image, $conn);
+  $insert_image = "INSERT INTO image (name,description,filename ) VALUES ('$file_name','$albumdescription','album/$file_name')  ";
+  $run_insert_image = mysql_query( $insert_image, $conn);
+  $insert_image_errmsg = mysql_error($conn);
+  $image_id = mysql_insert_id();
 
-  $insert_album = "INSERT INTO album (name,description,filename ) VALUES ('$albumname','$albumdescription','album/$file_name')  ";;
+
+  $insert_album = "INSERT INTO album (name,description,filename ) VALUES ('$albumname','$albumdescription','album/$file_name')  ";
   $run_insert_album = mysql_query( $insert_album, $conn);
+  $insert_album_errmsg = mysql_error($conn);
+  $album_id = mysql_insert_id();
+
+
+  if ($run_insert_image) {
+      mysql_query("update image set album_id='$album_id' where id='$image_id'",$conn);
+      //echo "New record created successfully";
+      //echo "<script>alert('Album Created')</script>";
+  } else {
+      echo "<script>alert('Album Creation Failed: Check the bottom of the page for details.')</script>";
+      echo "Error: " . $insert_image .  "<br>" . $insert_image_errmsg;
+      //echo "<script>alert('" .$insert_image_errmsg. "')</script>";
+  }
 
  if ($run_insert_album) {
-     echo "New record created successfully";
+     //echo "New record created successfully";
      echo "<script>alert('Album Created')</script>";
  } else {
-     echo "Error: " . $insert_album .  "<br>" . mysql_error($conn);
+     echo "<script>alert('Album Creation Failed: Check the bottom of the page for details.')</script>";
+     echo "Error: " . $insert_album .  "<br>" . $insert_album_errmsg;
+     //echo "<script>alert('" .$insert_album_errmsg. "')</script>";
  }
 
 }

@@ -27,7 +27,30 @@ $select = mysql_query("SELECT * FROM album",$conn);
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   <script type="text/javascript" src="assets/js/jquery.js"></script>
-  <script type="text/javascript" src="assets/js/modify_leihequipment.js"></script>
+  <script type="text/javascript" src="assets/js/modify_album.js"></script>
+	<script>
+	$(document).ready(function(){
+	function delete_album(id)
+	{
+	 $.ajax
+	 ({
+	  type:'post',
+	  url:'modify_album.php',
+	  data:{
+	   delete_album:'delete_album',
+	   album_id:id,
+	  },
+	  success:function(response) {
+	   if(response=="success")
+	   {
+	    var row=document.getElementById("album"+id);
+	    row.parentNode.removeChild(row);
+	   }
+	  }
+	 });
+	}
+});
+	</script>
 
 </head>
 <body>
@@ -91,6 +114,7 @@ $url = 'view_album.php?' . http_build_query($parameters);
     </div>
     <div class="card-text">
       <?php echo $value['name']; ?>
+
     </div>
   </div>
 </div>
@@ -154,7 +178,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   <script type="text/javascript" src="assets/js/jquery.js"></script>
-  <script type="text/javascript" src="assets/js/modify_leihequipment.js"></script>
+  <script type="text/javascript" src="assets/js/modify_album.js"></script>
 
 </head>
 <body>
@@ -173,7 +197,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
 
   <div class="panel-body">
 
-  <!-- <form  name="myForm"   action=""   method="post" > -->
+<form  name="myForm"   action=""   method="post" >
   <div class="row">
   <div class="col-lg-12">
     <h2 style="color:red;">Albums</h2>
@@ -209,7 +233,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
        'id'=> $value['id']);
       $url = 'view_album.php?' . http_build_query($parameters);
       ?>
-      <div class="col-sm-3">
+      <div class="col-sm-3" id="album<?php echo $value['id']; ?>">
         <div class="card">
           <div class="card-image">
             <a href="<?php echo $url;?>"><img src="<?php echo $value['filename']; ?>"> </img></a>
@@ -217,6 +241,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
           <div class="card-text">
             <?php echo $value['name']; ?>
           </div>
+					<input type='button' class="delete_button" id="delete_button<?php echo $value['id'];?>" value="delete" onclick="delete_album('<?php echo $value['id'];?>');">
         </div>
       </div>
     <?php
@@ -242,7 +267,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
     'id'=> $value['id']);
    $url = 'view_album.php?' . http_build_query($parameters);
    ?>
-   <div class="col-sm-3">
+   <div class="col-sm-3" id="album<?php echo $value['id']; ?>">
      <div class="card">
        <div class="card-image">
          <a href="<?php echo $url;?>"><img src="<?php echo $value['filename']; ?>"> </img></a>
@@ -250,6 +275,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
        <div class="card-text">
          <?php echo $value['name']; ?>
        </div>
+			 <input type='button' class="delete_button" id="delete_button<?php echo $value['id'];?>" value="delete" onclick="delete_album('<?php echo $value['id'];?>');">
      </div>
    </div>
 <?php
@@ -279,7 +305,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
     'id'=> $value['id']);
    $url = 'view_album.php?' . http_build_query($parameters);
    ?>
-   <div class="col-sm-3">
+   <div class="col-sm-3" id="album<?php echo $value['id']; ?>">
      <div class="card">
        <div class="card-image">
          <a href="<?php echo $url;?>"><img src="<?php echo $value['filename']; ?>"> </img></a>
@@ -287,6 +313,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
        <div class="card-text">
          <?php echo $value['name']; ?>
        </div>
+			 <input type='button' class="delete_button" id="delete_button<?php echo $value['id'];?>" value="delete" onclick="delete_album('<?php echo $value['id'];?>');">
      </div>
    </div>
    <?php
@@ -342,7 +369,7 @@ $select = mysql_query("SELECT * FROM album",$conn);
   <br>
   <input name="update"  type="submit" value="Einreichen" >
 </div> -->
-<!-- </form> -->
+</form>
 </div>
 </div>
 </div>

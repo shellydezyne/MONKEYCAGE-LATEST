@@ -71,6 +71,7 @@ $to1bp3 = $get_info['to1b3'];
 $co1bp3 = $get_info['co1b3'];
 
 $to1bp4 = $get_info['to1b4'];
+$pdflabel = $get_info['pdflabel'];
 $co1bp4 = $get_info['co1b4'];
 
 //prices
@@ -237,6 +238,14 @@ function textCounter(textField, showCountField) {
 <script>
 var maxAmount1 = 50;
 function textCounter1(x, y) {
+    if (x.value.length > maxAmount1) {
+        x.value = x.value.substring(0, maxAmount1);
+  } else {
+        y.value = maxAmount1 - x.value.length;
+  }
+}
+function textCounter(x, y, maxCount) {
+    var maxAmount1 = maxCount + 0;
     if (x.value.length > maxAmount1) {
         x.value = x.value.substring(0, maxAmount1);
   } else {
@@ -458,6 +467,21 @@ function textCounter3(x, y) {
 
 
    </tr>
+   <tr>
+
+   <th>PDF Download Label</th>
+
+ </tr>
+<tr>
+
+   <td><textarea rows="1" cols="50"  name="pdflabel" onKeyDown="textCounter(this.form.pdflabel,this.form.countDisplaypdflabel,20);" onKeyUp="textCounter(this.form.pdflabel,this.form.countDisplaypdflabel,20);"><?php echo $pdflabel; ?> </textarea>
+
+   <br>
+    <input readonly type="text" name="countDisplaypdflabel" size="3" maxlength="3" value="20"> Characters Remaining</td>
+
+
+
+ </tr>
      <tr>
 
 
@@ -1739,6 +1763,7 @@ $to1b3 = $_POST['to1b3'];
 $co1b3 = $_POST['co1b3'];
 
 $to1b4 = $_POST['to1b4'];
+$pdflabel = $_POST['pdflabel'];
 $co1b4 = $_POST['co1b4'];
 
 $to2 = $_POST['to2'];
@@ -1833,7 +1858,7 @@ $run_insert_update= mysql_query( $insert_update, $conn);
 */
 
 
-$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1', co1='$co1', to1b='$to1b', co1b='$co1b', to1b1 ='$to1b1', co1b1 ='$co1b1' , to1b2 ='$to1b2', co1b2 ='$co1b2' , to1b3 ='$to1b3', co1b3 ='$co1b3' , to1b4 ='$to1b4', co1b4 ='$co1b4',to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,to5='$to5' , co5='$co5',to6='$to6' , co6='$co6' ,to7 ='$to7' , co7='$co7', to8 ='$to8' , co8 ='$co8' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
+$insert_update =" UPDATE main SET title='$ts',content='$cs',tf1='$tf1' ,tc1='$tc1',tf2='$tf2' , tc2= '$tc2' ,tf3='$tf3' ,tc3= '$tc3' ,to1='$to1', co1='$co1', to1b='$to1b', co1b='$co1b', to1b1 ='$to1b1', co1b1 ='$co1b1' , to1b2 ='$to1b2', co1b2 ='$co1b2' , to1b3 ='$to1b3', co1b3 ='$co1b3' , to1b4 ='$to1b4', pdflabel = '$pdflabel', co1b4 ='$co1b4',to2='$to2' ,co2='$co2' ,to3= '$to3' ,co3='$co3' ,to4='$to4' , co4='$co4' ,to5='$to5' , co5='$co5',to6='$to6' , co6='$co6' ,to7 ='$to7' , co7='$co7', to8 ='$to8' , co8 ='$co8' ,toa1='$toa1',coa1='$coa1',toa2='$toa2',coa2='$coa2',toa3= '$toa3',coa3='$coa3',toa4='$toa4' ,coa4='$coa4'";
 
 $run_insert_update= mysql_query( $insert_update, $conn);
 

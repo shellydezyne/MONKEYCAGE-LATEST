@@ -15,7 +15,7 @@ include("db.php");
 if(isset($_FILES['imagefile']) && isset($_POST['imagelabel']) && isset($_POST['album_id'])){
    error_reporting(E_ERROR | E_PARSE);
    $errors= array();
-   $imageame = $_POST['imagelabel'];
+   $imagelabel = $_POST['imagelabel'];
    $album_id = $_POST['album_id'];
    $file_name = $_FILES['imagefile']['name'];
    $file_size = $_FILES['imagefile']['size'];
@@ -44,7 +44,7 @@ if(isset($_FILES['imagefile']) && isset($_POST['imagelabel']) && isset($_POST['a
 
 
 // $insert_product = "INSERT INTO products (product_image ) VALUES ('$file_tmp')  ";
-  $insert_image = "INSERT INTO image (name,description,filename,album_id ) VALUES ('$file_name','$file_name','album/$file_name','$album_id')  ";
+  $insert_image = "INSERT INTO image (name,description,filename,album_id ) VALUES ('$file_name','$imagelabel','album/$file_name','$album_id')  ";
   $run_insert_image = mysql_query( $insert_image, $conn);
 
  if ($run_insert_image) {
